@@ -9,5 +9,6 @@
 @import UIKit;
 
 @interface MyCustomTransitionDelegate : NSObject<UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate>
+@property (nonatomic, assign) CGFloat top;
 
 @end

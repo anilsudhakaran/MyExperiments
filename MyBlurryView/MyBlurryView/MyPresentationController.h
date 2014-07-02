@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyPresentationController : UIPresentationController
+@property (nonatomic, assign) CGFloat top;
 
 @end

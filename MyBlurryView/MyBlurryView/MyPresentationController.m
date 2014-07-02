@@ -74,6 +74,8 @@
     CGRect presentedViewFrame = CGRectZero;
     CGRect containerBounds = [[self containerView] bounds];
     
+    containerBounds.origin.y += self.top;
+    containerBounds.size.height -= self.top;
     presentedViewFrame = CGRectIntegral(CGRectInset(containerBounds, CGRectGetWidth(containerBounds)/7.0, CGRectGetHeight(containerBounds)/7.0));
     return presentedViewFrame;
 }

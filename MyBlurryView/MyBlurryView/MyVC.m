@@ -17,6 +17,7 @@
 @property (nonatomic, strong) IBInspectable UILabel *myInspectableLabel;
 @property (nonatomic, strong) UIImageView *imgView;
 @property (nonatomic, strong) MyCustomTransitionDelegate *transitionDelegate;
+@property (nonatomic, assign) CGFloat top;
 @end
 
 @implementation MyVC
@@ -50,8 +51,8 @@
 
 -(void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    CGFloat top = self.topLayoutGuide.length;
-    self.imgView.frame = CGRectMake(0, top, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+    self.top = self.topLayoutGuide.length;
+    self.imgView.frame = CGRectMake(0, self.top, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +71,8 @@
 //    self.myNewVC.view.alpha = 1.0;
     
     self.transitionDelegate = [[MyCustomTransitionDelegate alloc] init];
+    self.transitionDelegate.top = self.top;
+    
     self.myNewVC.transitioningDelegate = self.transitionDelegate;
     self.myNewVC.modalPresentationStyle = UIModalPresentationCustom;
 
