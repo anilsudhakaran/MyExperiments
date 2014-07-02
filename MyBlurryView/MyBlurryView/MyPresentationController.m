@@ -96,7 +96,11 @@
 {
     if([gesture state] == UIGestureRecognizerStateRecognized)
     {
-        [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+            if ([self.presentingViewController isKindOfClass:[UINavigationController class]]) {
+                ((UINavigationController *)self.presentingViewController).navigationBar.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
+            }
+        }];
     }
 }
 

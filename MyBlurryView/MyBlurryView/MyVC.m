@@ -41,6 +41,11 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewView:)];
+    
+    self.navigationItem.title = @"Tap outside modal to dismiss";
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleHeadline] size:15],
+                                                                    NSForegroundColorAttributeName: [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
 }
 
 -(void)viewDidLayoutSubviews {
@@ -55,6 +60,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (IBAction)addNewView:(id)sender {
     self.myNewVC = [[MyCustomModalBlurryVC alloc] init];
 //    self.myNewVC.view.backgroundColor = [UIColor purpleColor];
@@ -65,6 +74,7 @@
     self.myNewVC.modalPresentationStyle = UIModalPresentationCustom;
 
     [self presentViewController:self.myNewVC animated:YES completion:^{
+        self.navigationController.navigationBar.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.imgView.image = [UIImage imageNamed:@"skittles"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

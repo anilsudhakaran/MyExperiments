@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MyNavController.h"
 #import "MyVC.h"
 
 @interface AppDelegate ()
@@ -27,7 +28,7 @@
     [self.window makeKeyAndVisible];
 
     MyVC *myVC = [[MyVC alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:myVC];
+    MyNavController *nav = [[MyNavController alloc] initWithRootViewController:myVC];
     [self.window setRootViewController:nav];
     return YES;
 }

@@ -10,6 +10,7 @@
 		261C8A6E195EFA8C005542FF /* MyPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261C8A6D195EFA8C005542FF /* MyPresentationController.m */; };
 		261C8A71195F6433005542FF /* MyCustomTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 261C8A70195F6433005542FF /* MyCustomTransitionDelegate.m */; };
 		2642E5C319625D0B00DC9D15 /* MyCustomModalBlurryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2642E5C219625D0B00DC9D15 /* MyCustomModalBlurryVC.m */; };
+		2642E5C61963B50C00DC9D15 /* MyNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2642E5C51963B50C00DC9D15 /* MyNavController.m */; };
 		268B430C1942EEA900F623F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 268B430B1942EEA900F623F5 /* main.m */; };
 		268B430F1942EEA900F623F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 268B430E1942EEA900F623F5 /* AppDelegate.m */; };
 		268B43121942EEA900F623F5 /* MyBlurryView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 268B43101942EEA900F623F5 /* MyBlurryView.xcdatamodeld */; };
@@ -90,6 +91,8 @@
 		261C8A70195F6433005542FF /* MyCustomTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTransitionDelegate.m; sourceTree = "<group>"; };
 		2642E5C119625D0B00DC9D15 /* MyCustomModalBlurryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomModalBlurryVC.h; sourceTree = "<group>"; };
 		2642E5C219625D0B00DC9D15 /* MyCustomModalBlurryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomModalBlurryVC.m; sourceTree = "<group>"; };
+		2642E5C41963B50C00DC9D15 /* MyNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavController.h; sourceTree = "<group>"; };
+		2642E5C51963B50C00DC9D15 /* MyNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavController.m; sourceTree = "<group>"; };
 		268B43061942EEA900F623F5 /* MyBlurryView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBlurryView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		268B430A1942EEA900F623F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		268B430B1942EEA900F623F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 			children = (
 				268B430D1942EEA900F623F5 /* AppDelegate.h */,
 				268B430E1942EEA900F623F5 /* AppDelegate.m */,
+				2642E5C41963B50C00DC9D15 /* MyNavController.h */,
+				2642E5C51963B50C00DC9D15 /* MyNavController.m */,
 				268B433D1943567800F623F5 /* MyVC.h */,
 				268B433E1943567800F623F5 /* MyVC.m */,
 				2642E5C119625D0B00DC9D15 /* MyCustomModalBlurryVC.h */,
@@ -432,6 +437,7 @@
 				261C8A6E195EFA8C005542FF /* MyPresentationController.m in Sources */,
 				261C8A71195F6433005542FF /* MyCustomTransitionDelegate.m in Sources */,
 				268B433C1942F9D800F623F5 /* MyCustomTransition.m in Sources */,
+				2642E5C61963B50C00DC9D15 /* MyNavController.m in Sources */,
 				268B430C1942EEA900F623F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
