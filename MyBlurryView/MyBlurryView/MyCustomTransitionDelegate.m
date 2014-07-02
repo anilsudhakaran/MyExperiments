@@ -11,6 +11,7 @@
 #import "MyCustomTransition.h"
 
 @implementation MyCustomTransitionDelegate
+@synthesize top = _top;
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     MyCustomTransition *customTransition = [[MyCustomTransition alloc] init];
@@ -27,7 +28,7 @@
 -(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     
     MyPresentationController *myPresentationController = [[MyPresentationController alloc] initWithPresentingViewController:presenting presentedViewController:presented];
-    myPresentationController.top = self.top;
+    myPresentationController.delegate = self;
     return myPresentationController;
 }
 

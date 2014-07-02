@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCustomProtocol.h"
 
-@interface MyVC : UIViewController
+@interface MyVC : UIViewController<MyTopLayoutGuideProtocol>
 
 @end

@@ -17,10 +17,10 @@
 @property (nonatomic, strong) IBInspectable UILabel *myInspectableLabel;
 @property (nonatomic, strong) UIImageView *imgView;
 @property (nonatomic, strong) MyCustomTransitionDelegate *transitionDelegate;
-@property (nonatomic, assign) CGFloat top;
 @end
 
 @implementation MyVC
+@synthesize top = _top;
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,12 +47,16 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleHeadline] size:15],
                                                                     NSForegroundColorAttributeName: [UIColor whiteColor]};
     self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor redColor];
+    
+    self.transitionDelegate = [[MyCustomTransitionDelegate alloc] init];
 }
 
 -(void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     self.top = self.topLayoutGuide.length;
     self.imgView.frame = CGRectMake(0, self.top, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
+    self.transitionDelegate.top = self.top;
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,9 +73,6 @@
     self.myNewVC = [[MyCustomModalBlurryVC alloc] init];
 //    self.myNewVC.view.backgroundColor = [UIColor purpleColor];
 //    self.myNewVC.view.alpha = 1.0;
-    
-    self.transitionDelegate = [[MyCustomTransitionDelegate alloc] init];
-    self.transitionDelegate.top = self.top;
     
     self.myNewVC.transitioningDelegate = self.transitionDelegate;
     self.myNewVC.modalPresentationStyle = UIModalPresentationCustom;

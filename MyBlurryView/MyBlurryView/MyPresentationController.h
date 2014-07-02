@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCustomProtocol.h"
 
 @interface MyPresentationController : UIPresentationController
-@property (nonatomic, assign) CGFloat top;
 
 @end

@@ -7,8 +7,8 @@
 //
 
 @import UIKit;
+#import "MyCustomProtocol.h"
 
-@interface MyCustomTransitionDelegate : NSObject<UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate>
-@property (nonatomic, assign) CGFloat top;
+@interface MyCustomTransitionDelegate : NSObject<UIViewControllerTransitioningDelegate, UIAdaptivePresentationControllerDelegate, MyTopLayoutGuideProtocol>
 
 @end
