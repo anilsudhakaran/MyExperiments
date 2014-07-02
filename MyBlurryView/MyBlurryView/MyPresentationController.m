@@ -75,16 +75,17 @@
     CGRect containerBounds = [[self containerView] bounds];
     
     if ([self.delegate conformsToProtocol:@protocol(MyTopLayoutGuideProtocol)]) {
-        containerBounds.origin.y += ((id<MyTopLayoutGuideProtocol>)self.delegate).top;
-        containerBounds.size.height -= ((id<MyTopLayoutGuideProtocol>)self.delegate).top;
+        CGFloat top = [(id<MyTopLayoutGuideProtocol>)self.delegate top];
+        containerBounds.origin.y += top;
+        containerBounds.size.height -= top;
     }
     presentedViewFrame = CGRectIntegral(CGRectInset(containerBounds, CGRectGetWidth(containerBounds)/7.0, CGRectGetHeight(containerBounds)/7.0));
     return presentedViewFrame;
 }
 
--(id<UIAdaptivePresentationControllerDelegate>)delegate {
-    return [[MyCustomTransitionDelegate alloc] init];
-}
+//-(id<UIAdaptivePresentationControllerDelegate>)delegate {
+//    return [[MyCustomTransitionDelegate alloc] init];
+//}
 
 -(void)prepareDimmingView {
     self.dimmingView = [[UIView alloc] init];

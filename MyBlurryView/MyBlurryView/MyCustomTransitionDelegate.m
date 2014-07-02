@@ -36,4 +36,12 @@
     return UIModalPresentationCustom;
 }
 
+-(CGFloat)top {
+    return _top;
+}
+
+-(void)setTop:(CGFloat)top {
+    _top = top;
+}
+
 @end
