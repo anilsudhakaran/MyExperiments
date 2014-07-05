@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="myCell" id="KGk-i7-Jjw" customClass="MyCell" customModule="MyCustomFramework">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-Ax-gPV">
+                        <rect key="frame" x="15" y="9" width="25" height="25"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="c1p-8D-vWb"/>
+                            <constraint firstAttribute="width" secondItem="K0g-Ax-gPV" secondAttribute="height" multiplier="1:1" id="wHE-oJ-sar"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-R6-r5g" customClass="MyView" customModule="MyCustomFramework">
+                        <rect key="frame" x="15" y="9" width="25" height="25"/>
+                    </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="wmk-OS-A8q">
+                        <rect key="frame" x="50" y="10" width="260" height="23"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="K0g-Ax-gPV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="39P-5s-58S"/>
+                    <constraint firstItem="wmk-OS-A8q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4YF-5b-yj9"/>
+                    <constraint firstAttribute="trailing" secondItem="wmk-OS-A8q" secondAttribute="trailing" constant="10" id="GPU-Ja-tLp"/>
+                    <constraint firstAttribute="bottom" secondItem="wmk-OS-A8q" secondAttribute="bottom" constant="10" id="NOG-xS-CkO"/>
+                    <constraint firstItem="wmk-OS-A8q" firstAttribute="leading" secondItem="K0g-Ax-gPV" secondAttribute="trailing" constant="10" id="YBj-2P-ybE"/>
+                    <constraint firstItem="K0g-Ax-gPV" firstAttribute="height" secondItem="gdw-R6-r5g" secondAttribute="height" id="ZXF-2I-SrR"/>
+                    <constraint firstItem="K0g-Ax-gPV" firstAttribute="width" secondItem="gdw-R6-r5g" secondAttribute="width" id="aO4-GK-alg"/>
+                    <constraint firstAttribute="centerY" secondItem="K0g-Ax-gPV" secondAttribute="centerY" id="kjG-i7-Q3Y"/>
+                    <constraint firstItem="K0g-Ax-gPV" firstAttribute="centerY" secondItem="gdw-R6-r5g" secondAttribute="centerY" id="pwe-2S-f3h"/>
+                    <constraint firstItem="K0g-Ax-gPV" firstAttribute="leading" secondItem="gdw-R6-r5g" secondAttribute="leading" id="sgB-tq-dCW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="myTextLabel" destination="wmk-OS-A8q" id="igh-eD-h6V"/>
+                <outlet property="myView" destination="gdw-R6-r5g" id="wJa-G2-Icc"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
