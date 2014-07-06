@@ -13,7 +13,7 @@ import QuartzCore
 
     @IBOutlet var myLabel:UILabel
 
-    var myView:MyView!
+    @IBOutlet var myView:MyView!
 
     @IBInspectable var myLabelString:NSString? {
         didSet {
@@ -50,16 +50,21 @@ import QuartzCore
         fontSize = 30
         myLabelString = "WWDC 2014"
         
-        if myView {
-            myView.frame = CGRectMake((CGRectGetWidth(bounds)-240)/2, (CGRectGetHeight(bounds)-240)/2, 240, 240)
-        }
-        else {
-            myView = MyView(frame: CGRectMake((CGRectGetWidth(bounds)-240)/2, (CGRectGetHeight(bounds)-240)/2, 240, 240))
-            myView.backgroundColor = UIColor.clearColor()
-            myView.backColor = backgroundColor
-            self.addSubview(myView)
-        }
+        myView.backgroundColor = UIColor.clearColor()
+        myView.backColor = backgroundColor
         myView.setNeedsDisplay()
+
+//        if myView {
+//            myView.frame = CGRectMake((CGRectGetWidth(bounds)-240)/2, (CGRectGetHeight(bounds)-240)/2, 240, 240)
+//        }
+//        else {
+//            myView = MyView(frame: CGRectMake((CGRectGetWidth(bounds)-240)/2, (CGRectGetHeight(bounds)-240)/2, 240, 240))
+//            myView.backgroundColor = UIColor.clearColor()
+//            myView.backColor = backgroundColor
+//            self.addSubview(myView)
+//        }
+//        myView.setNeedsDisplay()
+
     }
     
     // Only override drawRect: if you perform custom drawing.

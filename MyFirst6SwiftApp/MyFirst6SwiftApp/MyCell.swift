@@ -12,6 +12,7 @@ class MyCell: UITableViewCell {
 
     @IBOutlet var myTextLabel : UILabel
     @IBOutlet var myView: MyView
+    @IBOutlet var myInitials: UILabel
     
     var vibrantView: UIVisualEffectView?
     var visualEffectView: UIVisualEffectView?
@@ -22,8 +23,11 @@ class MyCell: UITableViewCell {
         // Initialization code
         myTextLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         myTextLabel.numberOfLines = 0;
-
+        
+        myInitials.text = "AA"
+        
         myView.backgroundColor = UIColor.clearColor()
+        
         //myView.setNeedsLayout()
         
         //var blur = UIBlurEffect(style: .Light)
@@ -44,11 +48,5 @@ class MyCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //visualEffectView!.frame = self.bounds
-        //vibrantView!.frame = self.bounds;
     }
 }

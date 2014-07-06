@@ -14,23 +14,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-Ax-gPV">
-                        <rect key="frame" x="15" y="9" width="25" height="25"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-Ax-gPV">
+                        <rect key="frame" x="15" y="14" width="17" height="17"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="c1p-8D-vWb"/>
+                            <constraint firstAttribute="width" constant="40" id="6vd-Sm-B3u"/>
                             <constraint firstAttribute="width" secondItem="K0g-Ax-gPV" secondAttribute="height" multiplier="1:1" id="wHE-oJ-sar"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-R6-r5g" customClass="MyView" customModule="MyCustomFramework">
-                        <rect key="frame" x="15" y="9" width="25" height="25"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-R6-r5g" customClass="MyView" customModule="MyCustomFramework">
+                        <rect key="frame" x="15" y="14" width="17" height="17"/>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="wmk-OS-A8q">
-                        <rect key="frame" x="50" y="10" width="260" height="23"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="245" translatesAutoresizingMaskIntoConstraints="NO" id="wmk-OS-A8q">
+                        <rect key="frame" x="65" y="10" width="245" height="23"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,8 +51,9 @@
                     <constraint firstItem="K0g-Ax-gPV" firstAttribute="leading" secondItem="gdw-R6-r5g" secondAttribute="leading" id="sgB-tq-dCW"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="myInitials" destination="K0g-Ax-gPV" id="U1l-TL-vWX"/>
                 <outlet property="myTextLabel" destination="wmk-OS-A8q" id="igh-eD-h6V"/>
                 <outlet property="myView" destination="gdw-R6-r5g" id="wJa-G2-Icc"/>
             </connections>

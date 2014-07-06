@@ -21,17 +21,17 @@ class MyView: UIView {
     init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
-        initialize()
+        //initialize()
     }
 
     init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
-        initialize()
+        //initialize()
     }
 
-    func initialize() {
+    func initialize(#rect: CGRect, color: UIColor) {
         path = UIBezierPath(rect: bounds)
-        //backColor.setFill()
+        color.setFill()
         circlePath = UIBezierPath()
         let centerX = CGRectGetWidth(bounds) / 2.0
         let centerY = CGRectGetHeight(bounds) / 2.0
@@ -39,24 +39,15 @@ class MyView: UIView {
         circlePath.addArcWithCenter(CGPointMake(centerX, centerY), radius: centerX, startAngle: 0.0, endAngle: endAngle, clockwise: Bool.true)
         path.appendPath(circlePath)
         path.usesEvenOddFillRule = Bool.true
-        //path!.fill()
+        path.fill()
     }
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect)
     {
-//        // Drawing code
-//        var path = UIBezierPath(rect: bounds)
-        backColor.setFill()
-//        var circlePath = UIBezierPath()
-//        let centerX = CGRectGetWidth(rect) / 2.0
-//        let centerY = CGRectGetHeight(rect) / 2.0
-//        let endAngle:CGFloat = 2.0*MPI
-//        circlePath.addArcWithCenter(CGPointMake(centerX, centerY), radius: centerX, startAngle: 0.0, endAngle: endAngle, clockwise: Bool.true)
-//        path.appendPath(circlePath)
-//        path.usesEvenOddFillRule = Bool.true
-        path.fill()
+        // Drawing code
+        initialize(rect: rect, color: backColor)
     }
     
 

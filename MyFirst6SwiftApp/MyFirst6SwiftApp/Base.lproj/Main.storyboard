@@ -55,11 +55,18 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pds-Os-vg6" customClass="MyView" customModule="MyCustomFramework">
+                                        <rect key="frame" x="120" y="104" width="240" height="209"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="XGG-fe-2F7" secondAttribute="centerX" id="1Fa-ub-bNQ"/>
                                     <constraint firstAttribute="centerX" secondItem="XGG-fe-2F7" secondAttribute="centerX" id="3Wm-L3-Qtj"/>
+                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="top" secondItem="pds-Os-vg6" secondAttribute="top" constant="-16" id="3aj-tD-k7j"/>
+                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="bottom" secondItem="pds-Os-vg6" secondAttribute="bottom" constant="15" id="BsK-Bg-Pre"/>
+                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="leading" secondItem="pds-Os-vg6" secondAttribute="leading" id="O2v-7R-jO1"/>
+                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="trailing" secondItem="pds-Os-vg6" secondAttribute="trailing" id="Ywq-QW-meo"/>
                                     <constraint firstAttribute="centerY" secondItem="XGG-fe-2F7" secondAttribute="centerY" id="bzv-wA-RSr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
