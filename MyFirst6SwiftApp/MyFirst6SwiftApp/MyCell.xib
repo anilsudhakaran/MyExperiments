@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-Ax-gPV">
-                        <rect key="frame" x="15" y="14" width="17" height="17"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0g-Ax-gPV">
+                        <rect key="frame" x="15" y="2" width="40" height="40"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="6vd-Sm-B3u"/>
@@ -26,8 +26,8 @@
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-R6-r5g" customClass="MyView" customModule="MyCustomFramework">
-                        <rect key="frame" x="15" y="14" width="17" height="17"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdw-R6-r5g" customClass="MyView" customModule="MyCustomFramework">
+                        <rect key="frame" x="15" y="2" width="40" height="40"/>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="245" translatesAutoresizingMaskIntoConstraints="NO" id="wmk-OS-A8q">
                         <rect key="frame" x="65" y="10" width="245" height="23"/>
@@ -51,7 +51,7 @@
                     <constraint firstItem="K0g-Ax-gPV" firstAttribute="leading" secondItem="gdw-R6-r5g" secondAttribute="leading" id="sgB-tq-dCW"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="myInitials" destination="K0g-Ax-gPV" id="U1l-TL-vWX"/>
                 <outlet property="myTextLabel" destination="wmk-OS-A8q" id="igh-eD-h6V"/>

@@ -60,8 +60,10 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController.setToolbarHidden(Bool.false, animated: Bool.true)
-        navigationController.hidesBarsOnTap = Bool.true
+        if navigationController {
+            navigationController.setToolbarHidden(Bool.true, animated: Bool.true)
+            navigationController.hidesBarsOnTap = Bool.true
+        }
     }
     
     //#pragma mark - Table view data source

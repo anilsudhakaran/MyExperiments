@@ -11,9 +11,9 @@ import QuartzCore
 
 @IBDesignable class MyCustomView: UIView {
 
-    @IBOutlet var myLabel:UILabel
+    var myLabel: UILabel!
 
-    @IBOutlet var myView:MyView!
+    var myView: MyView!
 
     @IBInspectable var myLabelString:NSString? {
         didSet {
@@ -43,35 +43,29 @@ import QuartzCore
     init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         // Initialization code
+
+        myLabel = UILabel(frame: CGRectMake(0, 0, 240, 240))
+        addSubview(myLabel)
+        myLabel.center = center
+        myLabel.textAlignment = NSTextAlignment.Center
+        myLabel.textColor = UIColor.lightGrayColor()
+        myLabel.backgroundColor = UIColor(red: 255.0/255.0, green: 215.0/255.0, blue:0.0/255.0, alpha: 1.0)
+        
+        myView = MyView(frame: CGRectMake(0, 0, 240, 240))
+        addSubview(myView)
+        myView.center = center
+        myView.backgroundColor = UIColor.clearColor()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         fontSize = 30
         myLabelString = "WWDC 2014"
-        
-        myView.backgroundColor = UIColor.clearColor()
+        myLabel.center = CGPointMake(center.x, CGRectGetHeight(bounds)/2.0)
+        myView.center = myLabel.center
         myView.backColor = backgroundColor
-        myView.setNeedsDisplay()
-
-//        if myView {
-//            myView.frame = CGRectMake((CGRectGetWidth(bounds)-240)/2, (CGRectGetHeight(bounds)-240)/2, 240, 240)
-//        }
-//        else {
-//            myView = MyView(frame: CGRectMake((CGRectGetWidth(bounds)-240)/2, (CGRectGetHeight(bounds)-240)/2, 240, 240))
-//            myView.backgroundColor = UIColor.clearColor()
-//            myView.backColor = backgroundColor
-//            self.addSubview(myView)
-//        }
-//        myView.setNeedsDisplay()
-
+        myView.setNeedsLayout()
     }
-    
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-//    override func drawRect(rect: CGRect)
-//    {
-//    }
     
     func updateMyLabelsText() {
         if myLabel {
@@ -87,7 +81,7 @@ import QuartzCore
     }
     
     func updateMyBackgroundColor() {
-        backgroundColor = backColor;
+        backgroundColor = backColor
     }
     
 }

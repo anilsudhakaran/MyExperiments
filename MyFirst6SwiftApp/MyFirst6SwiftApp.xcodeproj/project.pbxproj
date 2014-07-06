@@ -17,6 +17,7 @@
 		26188E16194899B900D773CD /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26188E01194899B900D773CD /* MyCustomFramework.framework */; };
 		26188E17194899B900D773CD /* MyCustomFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26188E01194899B900D773CD /* MyCustomFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		26188E26194899D200D773CD /* MyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26188E25194899D200D773CD /* MyCustomView.swift */; };
+		2621BE3F196902DC009AC237 /* MyCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2621BE3E196902DC009AC237 /* MyCustomView.xib */; };
 		2649474A194CEEED00B92CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26494749194CEEED00B92CCD /* Images.xcassets */; };
 		2649474C194CF0B500B92CCD /* vase.png in Resources */ = {isa = PBXBuildFile; fileRef = 2649474B194CF0B500B92CCD /* vase.png */; };
 		268E77EB1966491F00795486 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E77EA1966491F00795486 /* MyVC.swift */; };
@@ -103,6 +104,7 @@
 		26188E12194899B900D773CD /* MyCustomFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomFrameworkTests.swift; sourceTree = "<group>"; };
 		26188E25194899D200D773CD /* MyCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomView.swift; sourceTree = "<group>"; };
 		261A8E76194CD0C3008F56DD /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		2621BE3E196902DC009AC237 /* MyCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCustomView.xib; sourceTree = "<group>"; };
 		26494749194CEEED00B92CCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2649474B194CF0B500B92CCD /* vase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vase.png; sourceTree = "<group>"; };
 		268E77EA1966491F00795486 /* MyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				26F0656D194FE8DC00D54E76 /* MyCell.swift */,
 				26188DE31948942F00D773CD /* Main.storyboard */,
 				26F0656E194FE8DC00D54E76 /* MyCell.xib */,
+				2621BE3E196902DC009AC237 /* MyCustomView.xib */,
 				261A8E76194CD0C3008F56DD /* MyPlayground.playground */,
 				26494749194CEEED00B92CCD /* Images.xcassets */,
 				2649474B194CF0B500B92CCD /* vase.png */,
@@ -409,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F06570194FE8DC00D54E76 /* MyCell.xib in Resources */,
+				2621BE3F196902DC009AC237 /* MyCustomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MyCustomView" customModule="MyCustomFramework" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WWDC 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28n-14-YOY" userLabel="My Label">
+                    <rect key="frame" x="40" y="164" width="240" height="240"/>
+                    <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="28n-14-YOY" secondAttribute="height" multiplier="1:1" id="If3-bC-PdQ"/>
+                        <constraint firstAttribute="width" secondItem="28n-14-YOY" secondAttribute="height" multiplier="1:1" id="QNX-BO-sxM"/>
+                        <constraint firstAttribute="width" constant="240" id="Vwq-wx-aPz"/>
+                        <constraint firstAttribute="width" secondItem="28n-14-YOY" secondAttribute="height" multiplier="1:1" id="X7I-6B-oW1"/>
+                        <constraint firstAttribute="width" constant="240" id="cXs-I0-0Mh"/>
+                        <constraint firstAttribute="width" constant="240" id="xLV-vn-DI7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                    <variation key="widthClass=compact"/>
+                    <variation key="heightClass=regular-widthClass=regular"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhO-oa-ehY" customClass="MyView" customModule="MyCustomFramework">
+                    <rect key="frame" x="40" y="164" width="240" height="240"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="28n-14-YOY" secondAttribute="centerY" id="3eN-ye-e2K"/>
+                <constraint firstItem="LhO-oa-ehY" firstAttribute="centerX" secondItem="28n-14-YOY" secondAttribute="centerX" id="DwA-Av-d2J"/>
+                <constraint firstAttribute="centerX" secondItem="28n-14-YOY" secondAttribute="centerX" id="EGS-Tp-KlQ"/>
+                <constraint firstItem="LhO-oa-ehY" firstAttribute="centerY" secondItem="28n-14-YOY" secondAttribute="centerY" id="ORd-f3-TLq"/>
+                <constraint firstItem="LhO-oa-ehY" firstAttribute="height" secondItem="28n-14-YOY" secondAttribute="height" id="nxx-Dn-ZIA"/>
+                <constraint firstItem="LhO-oa-ehY" firstAttribute="width" secondItem="28n-14-YOY" secondAttribute="width" id="quU-W0-D2C"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backColor">
+                    <color key="value" red="0.64802872919999999" green="1" blue="0.71946962699999994" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                    <integer key="value" value="30"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="string" keyPath="myLabelString" value="WWDC 2014"/>
+            </userDefinedRuntimeAttributes>
+        </view>
+    </objects>
+</document>

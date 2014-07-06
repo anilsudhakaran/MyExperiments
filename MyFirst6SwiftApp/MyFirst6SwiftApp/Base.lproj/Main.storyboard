@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7MB-Bv-SgE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,56 +18,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikx-ro-xbl" customClass="MyCustomView" customModule="MyCustomFramework">
                                 <rect key="frame" x="0.0" y="64" width="480" height="416"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WWDC 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGG-fe-2F7" userLabel="My Label">
-                                        <rect key="frame" x="120" y="88" width="240" height="240"/>
-                                        <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="ChP-Cr-baj"/>
-                                            <constraint firstAttribute="width" constant="240" id="HfA-Jz-m7v"/>
-                                            <constraint firstAttribute="width" secondItem="XGG-fe-2F7" secondAttribute="height" multiplier="1:1" id="fa4-cI-s3I"/>
-                                            <constraint firstAttribute="width" secondItem="XGG-fe-2F7" secondAttribute="height" multiplier="1:1" id="pwc-DP-mt1"/>
-                                            <constraint firstAttribute="width" constant="240" id="wQb-TZ-PEa"/>
-                                            <constraint firstAttribute="width" secondItem="XGG-fe-2F7" secondAttribute="height" multiplier="1:1" id="wb1-Bg-fTf"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="HfA-Jz-m7v"/>
-                                                <exclude reference="fa4-cI-s3I"/>
-                                                <exclude reference="wQb-TZ-PEa"/>
-                                                <exclude reference="wb1-Bg-fTf"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="HfA-Jz-m7v"/>
-                                                <include reference="wb1-Bg-fTf"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <mask key="constraints">
-                                                <include reference="fa4-cI-s3I"/>
-                                                <include reference="wQb-TZ-PEa"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pds-Os-vg6" customClass="MyView" customModule="MyCustomFramework">
-                                        <rect key="frame" x="120" y="104" width="240" height="209"/>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="XGG-fe-2F7" secondAttribute="centerX" id="1Fa-ub-bNQ"/>
-                                    <constraint firstAttribute="centerX" secondItem="XGG-fe-2F7" secondAttribute="centerX" id="3Wm-L3-Qtj"/>
-                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="top" secondItem="pds-Os-vg6" secondAttribute="top" constant="-16" id="3aj-tD-k7j"/>
-                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="bottom" secondItem="pds-Os-vg6" secondAttribute="bottom" constant="15" id="BsK-Bg-Pre"/>
-                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="leading" secondItem="pds-Os-vg6" secondAttribute="leading" id="O2v-7R-jO1"/>
-                                    <constraint firstItem="XGG-fe-2F7" firstAttribute="trailing" secondItem="pds-Os-vg6" secondAttribute="trailing" id="Ywq-QW-meo"/>
-                                    <constraint firstAttribute="centerY" secondItem="XGG-fe-2F7" secondAttribute="centerY" id="bzv-wA-RSr"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="myLabelString" value="WWDC 2014"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
@@ -78,24 +28,6 @@
                                         <color key="value" red="0.64802872919999999" green="1" blue="0.71946962699999994" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1Fa-ub-bNQ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="1Fa-ub-bNQ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="1Fa-ub-bNQ"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="myLabel" destination="XGG-fe-2F7" id="O81-eK-w6u"/>
-                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

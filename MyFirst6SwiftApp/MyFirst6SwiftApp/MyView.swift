@@ -37,6 +37,9 @@ class MyView: UIView {
         let centerY = CGRectGetHeight(bounds) / 2.0
         let endAngle:CGFloat = 2.0*MPI
         circlePath.addArcWithCenter(CGPointMake(centerX, centerY), radius: centerX, startAngle: 0.0, endAngle: endAngle, clockwise: Bool.true)
+        UIColor.groupTableViewBackgroundColor().setStroke()
+        circlePath.lineWidth = 10.0;
+        circlePath.stroke()
         path.appendPath(circlePath)
         path.usesEvenOddFillRule = Bool.true
         path.fill()
