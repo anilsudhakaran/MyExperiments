@@ -53,5 +53,4 @@ class MyView: UIView {
         initialize(rect: rect, color: backColor)
     }
     
-
 }

@@ -2,3 +2,13 @@
 .DS_Store
 
 .DS_Store
+
+*.xcuserstate
+
+MyBlurryView/MyBlurryView.xcodeproj/project.xcworkspace/xcuserdata/anilsudhakaran.xcuserdatad/UserInterfaceState.xcuserstate
+
+MyFirst6SwiftApp/MyFirst6SwiftApp.xcodeproj/project.xcworkspace/xcuserdata/anilsudhakaran.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcbkptlist
+
+MyFirst6SwiftApp/MyFirst6SwiftApp.xcodeproj/xcuserdata/anilsudhakaran.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist

@@ -175,10 +175,10 @@
 			children = (
 				26188DDF1948942F00D773CD /* AppDelegate.swift */,
 				26188DE11948942F00D773CD /* ViewController.swift */,
-				26188E25194899D200D773CD /* MyCustomView.swift */,
-				26E4B0AF194DE843004E67C0 /* MyView.swift */,
 				26E4B0B1194EA764004E67C0 /* MyTableVC.swift */,
 				268E77EA1966491F00795486 /* MyVC.swift */,
+				26188E25194899D200D773CD /* MyCustomView.swift */,
+				26E4B0AF194DE843004E67C0 /* MyView.swift */,
 				26F0656D194FE8DC00D54E76 /* MyCell.swift */,
 				26188DE31948942F00D773CD /* Main.storyboard */,
 				26F0656E194FE8DC00D54E76 /* MyCell.xib */,
