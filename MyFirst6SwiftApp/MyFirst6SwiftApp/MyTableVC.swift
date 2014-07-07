@@ -78,7 +78,7 @@ class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    override func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> AnyObject[]! {
+    override func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
         var testAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Accept", handler:
             {(testAction, indexPath) -> Void in
                 println("Action \(testAction.title) Index Path \(indexPath)")
