@@ -42,16 +42,58 @@ myLabel.text = "WWDC 2014"
 myView.backgroundColor = UIColor.greenColor()
 
 //Add image view
-let myImage = UIImage(named: "/Users/anilsudhakaran/Pictures/vase")
-let myImageView = UIImageView(image:nil)
-myImageView.contentMode = UIViewContentMode.ScaleAspectFit
-myImageView.frame = myView.bounds
-myImageLayer.addSublayer(myImageView.layer)
+//let myImage = UIImage(named: "/Users/anilsudhakaran/Pictures/vase")
+//let myImageView = UIImageView(image:nil)
+//myImageView.contentMode = UIViewContentMode.ScaleAspectFit
+//myImageView.frame = myView.bounds
+//myImageLayer.addSublayer(myImageView.layer)
+//
+//myView.backgroundColor = UIColor.greenColor()
+//
+//myImageView.image = myImage
+//
+//myView.backgroundColor = UIColor.purpleColor();
 
-myView.backgroundColor = UIColor.greenColor()
+//func printNumbersFrom(fromValue from:Int, toValue to:Int) {
+//    for index in from...to {
+//        var printStr = "\(from)"
+//        if (from % 3 == 0 && from % 5 == 0) {printStr = "FizzBuzz"}
+//        else if (from % 3 == 0) {printStr = "Fizz"}
+//        else if (from % 5 == 0) {printStr = "Buzz"}
+//        
+//        var p = printStr
+//        
+//        println("\(printStr)")
+//        NSLog("%@", printStr)
+//    }
+//}
+//
+//printNumbersFrom(fromValue: 1, toValue: 100)
 
-myImageView.image = myImage
+func reverseString(normalString str:String) -> String {
+    var str = str
+    var begin = 0
+    var end = countElements(str)
+    while (end > begin) {
+        
+        var firstCharRangeStart = advance(str.startIndex, begin)
+        var firstCharRangeEnd = advance(str.startIndex, begin+1)
+        var firstChar = str.substringWithRange(Range(start: firstCharRangeStart, end: firstCharRangeEnd))
+        
+        var lastCharRangeStart = advance(str.endIndex, -(begin+1))
+        var lastCharRangeEnd = advance(str.endIndex, -begin)
+        var lastChar = str.substringWithRange(Range(start: lastCharRangeStart, end: lastCharRangeEnd))
+        
+        str = str.stringByReplacingCharactersInRange(Range(start: firstCharRangeStart, end: firstCharRangeEnd), withString: lastChar)
+        str = str.stringByReplacingCharactersInRange(Range(start: lastCharRangeStart, end: lastCharRangeEnd), withString: firstChar)
+        
+        end--
+        begin++
+    }
+    return str
+}
 
-myView.backgroundColor = UIColor.purpleColor();
-
+var originalString = "Malayalam"
+var reversedString = reverseString(normalString: originalString)
+var isPalindraome = (originalString.lowercaseString == reversedString.lowercaseString)
 
