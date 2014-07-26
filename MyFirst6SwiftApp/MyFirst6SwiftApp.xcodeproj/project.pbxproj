@@ -18,7 +18,13 @@
 		2692B73D1983521800613517 /* MyCustomFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2692B73C1983521800613517 /* MyCustomFrameworkTests.m */; };
 		2692B7401983521800613517 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2692B72B1983521700613517 /* MyCustomFramework.framework */; };
 		2692B7411983521800613517 /* MyCustomFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2692B72B1983521700613517 /* MyCustomFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		26F06571194FEA2200D54E76 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F0656E194FE8DC00D54E76 /* MyCell.xib */; };
+		2692B74E1983522000613517 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E77EA1966491F00795486 /* MyVC.swift */; };
+		2692B74F1983522300613517 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B0B1194EA764004E67C0 /* MyTableVC.swift */; };
+		2692B7501983522700613517 /* MyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26188E25194899D200D773CD /* MyCustomView.swift */; };
+		2692B7511983522A00613517 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B0AF194DE843004E67C0 /* MyView.swift */; };
+		2692B7521983522D00613517 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0656D194FE8DC00D54E76 /* MyCell.swift */; };
+		2692B7531983523600613517 /* MyCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2621BE3E196902DC009AC237 /* MyCustomView.xib */; };
+		2692B75E19835C6F00613517 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F0656E194FE8DC00D54E76 /* MyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,20 @@
 			remoteInfo = MyCustomFramework;
 		};
 		2692B74A1983521900613517 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26188DD21948942E00D773CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2692B72A1983521700613517;
+			remoteInfo = MyCustomFramework;
+		};
+		2692B74C1983521900613517 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26188DD21948942E00D773CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2692B72A1983521700613517;
+			remoteInfo = MyCustomFramework;
+		};
+		2692B75A198353FA00613517 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 26188DD21948942E00D773CD /* Project object */;
 			proxyType = 1;
@@ -359,6 +379,8 @@
 			dependencies = (
 				2692B7381983521800613517 /* PBXTargetDependency */,
 				2692B74B1983521900613517 /* PBXTargetDependency */,
+				2692B74D1983521900613517 /* PBXTargetDependency */,
+				2692B75B198353FA00613517 /* PBXTargetDependency */,
 			);
 			name = MyCustomFrameworkTests;
 			productName = MyCustomFrameworkTests;
@@ -419,7 +441,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26188DE51948942F00D773CD /* Main.storyboard in Resources */,
-				26F06571194FEA2200D54E76 /* MyCell.xib in Resources */,
 				2649474A194CEEED00B92CCD /* Images.xcassets in Resources */,
 				2649474C194CF0B500B92CCD /* vase.png in Resources */,
 			);
@@ -436,6 +457,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2692B7531983523600613517 /* MyCustomView.xib in Resources */,
+				2692B75E19835C6F00613517 /* MyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +493,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2692B7511983522A00613517 /* MyView.swift in Sources */,
+				2692B7521983522D00613517 /* MyCell.swift in Sources */,
+				2692B74E1983522000613517 /* MyVC.swift in Sources */,
+				2692B7501983522700613517 /* MyCustomView.swift in Sources */,
+				2692B74F1983522300613517 /* MyTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +536,16 @@
 			isa = PBXTargetDependency;
 			target = 2692B72A1983521700613517 /* MyCustomFramework */;
 			targetProxy = 2692B74A1983521900613517 /* PBXContainerItemProxy */;
+		};
+		2692B74D1983521900613517 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2692B72A1983521700613517 /* MyCustomFramework */;
+			targetProxy = 2692B74C1983521900613517 /* PBXContainerItemProxy */;
+		};
+		2692B75B198353FA00613517 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2692B72A1983521700613517 /* MyCustomFramework */;
+			targetProxy = 2692B75A198353FA00613517 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
