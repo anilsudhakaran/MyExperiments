@@ -11,9 +11,9 @@ import MyCustomFramework
 
 class ViewController: UIViewController, UIPopoverPresentationControllerDelegate, UIAdaptivePresentationControllerDelegate {
                             
-    @IBOutlet var myCustomView : MyCustomView
+    @IBOutlet var myCustomView: MyCustomView!
     
-    @IBOutlet var popoverButton : UIBarButtonItem
+    @IBOutlet weak var popoverButton: UIBarButtonItem!
     
     var topLayoutGuideLength:CGFloat = 0.0
     
@@ -21,6 +21,10 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     
     var actionSheet:UIBarButtonItem!
     var alertView:UIBarButtonItem!
+    
+    init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +70,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         
         popoverView!.title = "Popover"
         
-        popoverView!.setEditing(Bool.false, animated: Bool.true)
+        popoverView!.setEditing(false, animated: true)
         
         popoverView!.modalPresentationStyle = UIModalPresentationStyle.Popover
         let popover:UIPopoverPresentationController = popoverView!.popoverPresentationController
@@ -74,7 +78,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         popover.permittedArrowDirections = .Any
         popover.barButtonItem = popoverButton
         popoverView!.preferredContentSize = CGSizeMake(200, 300)
-        self.navigationController.presentViewController(popoverView, animated: Bool.true, completion:{})
+        self.navigationController.presentViewController(popoverView, animated: true, completion:{})
     }
     
     func loadActionSheet(sender: AnyObject!) {
@@ -113,11 +117,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         for action : AnyObject in actions {
             if let act = action as? UIAlertAction {
                 if act.title == "Disabled Action" {
-                    act.enabled = Bool.false
+                    act.enabled = false
                 }
             }
         }
-        self.navigationController.presentViewController(actionSheet, animated: Bool.true, completion: {})
+        self.navigationController.presentViewController(actionSheet, animated: true, completion: {})
     }
     
     func loadAlertView(sender: AnyObject!) {
@@ -141,7 +145,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         alert.addAction(cancelAction)
         alert.addAction(destructiveAction)
         
-        self.navigationController.presentViewController(alert, animated: Bool.true, completion: {})
+        self.navigationController.presentViewController(alert, animated: true, completion: {})
     }
     
     //UIAdaptivePresentationControllerDelegate
@@ -159,7 +163,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         
         var navController = UINavigationController(rootViewController: controller.presentedViewController)
         //navController.setToolbarHidden(Bool.false, animated: Bool.true)
-        navController.navigationBar.translucent = Bool.true
+        navController.navigationBar.translucent = true
         
         let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
         visualEffectView.frame = controller.presentedViewController.view.frame;
@@ -177,7 +181,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     }
     
     func dismissPopover(sender: AnyObject!) {
-        self.navigationController.dismissViewControllerAnimated(Bool.true, completion: nil)
+        self.navigationController.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-@IBDesignable class MyCustomView: UIView {
+@IBDesignable public class MyCustomView: UIView {
 
     var myLabel: UILabel!
 
@@ -51,7 +51,7 @@ import QuartzCore
         configureMyView()
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         
         if !myView {

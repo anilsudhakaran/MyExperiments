@@ -8,21 +8,21 @@
 
 import UIKit
 
-class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var data:NSArray?
+    public var data:NSArray?
 
-    @IBOutlet var tableView: UITableView
+    @IBOutlet public var tableView: UITableView!
         
-    @IBOutlet var headerView: UIView
-    @IBOutlet var headerLabel: UILabel
+    @IBOutlet private var headerView: UIView!
+    @IBOutlet private var headerLabel: UILabel!
     
     init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         //Custom Initializiation
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
@@ -31,8 +31,8 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        tableView.setTranslatesAutoresizingMaskIntoConstraints(Bool.false)
-        tableView.registerNib(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "myCell")
+        tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        tableView.registerNib(UINib(nibName: "MyCell", bundle: NSBundle(identifier: "MyCustomFramework")), forCellReuseIdentifier: "myCell")
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light))
@@ -45,7 +45,7 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         headerLabel.font = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleHeadline), size: 40.0)
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -58,27 +58,27 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //
 //    }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if navigationController {
-            navigationController.setToolbarHidden(Bool.true, animated: Bool.true)
-            navigationController.hidesBarsOnTap = Bool.true
+            navigationController.setToolbarHidden(true, animated: true)
+            navigationController.hidesBarsOnTap = true
         }
     }
     
     //#pragma mark - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    public func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // Return the number of sections.
         return 1
     }
     
-    func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return data!.count
     }
     
-    func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
+    public func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
         var cell : MyCell = tableView!.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath!) as MyCell
         
         if data!.count > indexPath!.row {
@@ -90,7 +90,7 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
+    public func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
         var testAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Accept", handler:
             {(testAction, indexPath) -> Void in
                 println("Action \(testAction.title) Index Path \(indexPath)")
@@ -118,19 +118,19 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return [testAction1, testAction, testAction2]
     }
     
-    func tableView(tableView: UITableView!, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        return Bool.false
+    public func tableView(tableView: UITableView!, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+        return false
     }
     
-    func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle {
+    public func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
     }
     
-    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    public func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         println("Editing Style \(editingStyle)")
     }
 
-    func tableView(tableView: UITableView!, viewForHeaderInSection section: Int) -> UIView! {
+    public func tableView(tableView: UITableView!, viewForHeaderInSection section: Int) -> UIView! {
         var sectionHeaderView:UIView = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(view.bounds), 25))
         sectionHeaderView.backgroundColor = UIColor.brownColor()
         
@@ -149,11 +149,11 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return sectionHeaderView
     }
     
-    func tableView(tableView: UITableView!, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(tableView: UITableView!, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
 
-    func tableView(tableView: UITableView!, viewForFooterInSection section: Int) -> UIView! {
+    public func tableView(tableView: UITableView!, viewForFooterInSection section: Int) -> UIView! {
         var sectionFooterView:UIView = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(view.bounds), 25))
         sectionFooterView.backgroundColor = UIColor.orangeColor()
         
@@ -172,7 +172,7 @@ class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return sectionFooterView
     }
     
-    func tableView(tableView: UITableView!, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(tableView: UITableView!, heightForFooterInSection section: Int) -> CGFloat {
         return 25
     }
 

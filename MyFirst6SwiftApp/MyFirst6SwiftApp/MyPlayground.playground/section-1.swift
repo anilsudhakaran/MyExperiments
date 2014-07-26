@@ -53,3 +53,5 @@ myView.backgroundColor = UIColor.greenColor()
 myImageView.image = myImage
 
 myView.backgroundColor = UIColor.purpleColor();
+
+

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+public class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     var data:NSArray?
     
@@ -22,7 +22,7 @@ class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelega
         //Custom Initializiation
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         println("Frame: \(tableView.frame)")
         
@@ -31,7 +31,7 @@ class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelega
         tableView.separatorEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light))
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -45,28 +45,28 @@ class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelega
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         println("Content Inset: \(tableView.contentInset.top)")
     }
     // #pragma mark - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    override public func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return data!.count
     }
 
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
+    override public func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
         var cell : MyCell = tableView!.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath!) as MyCell
         
         if data!.count > indexPath!.row {
@@ -78,7 +78,7 @@ class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    override func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
+    override public func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
         var testAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Accept", handler:
             {(testAction, indexPath) -> Void in
                 println("Action \(testAction.title) Index Path \(indexPath)")
@@ -106,15 +106,15 @@ class MyTableVC: UITableViewController, UITableViewDataSource, UITableViewDelega
         return [testAction1, testAction, testAction2]
     }
     
-    override func tableView(tableView: UITableView!, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        return Bool.false
+    override public func tableView(tableView: UITableView!, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+        return false
     }
     
-    override func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle {
+    override public func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
     }
     
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override public func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         println("Editing Style \(editingStyle)")
     }
 

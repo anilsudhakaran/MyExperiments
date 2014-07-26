@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MyCell: UITableViewCell {
+public class MyCell: UITableViewCell {
 
-    @IBOutlet var myTextLabel : UILabel
-    @IBOutlet var myView: MyView
-    @IBOutlet var myInitials: UILabel
+    @IBOutlet var myTextLabel : UILabel!
+    @IBOutlet var myView: MyView!
+    @IBOutlet var myInitials: UILabel!
     
     var vibrantView: UIVisualEffectView?
     var visualEffectView: UIVisualEffectView?
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
         // Initialization code
@@ -44,7 +44,7 @@ class MyCell: UITableViewCell {
         
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
