@@ -12,12 +12,12 @@ public class MyTableVC: UITableViewController, UITableViewDataSource, UITableVie
 
     var data:NSArray?
     
-    init(style: UITableViewStyle) {
+    override init(style: UITableViewStyle) {
         super.init(style: style)
         // Custom initialization
     }
 
-    init(coder aDecoder: NSCoder!) {
+    required public init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         //Custom Initializiation
     }

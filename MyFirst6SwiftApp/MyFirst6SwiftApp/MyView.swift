@@ -18,13 +18,13 @@ public class MyView: UIView {
     var path:UIBezierPath!
     var circlePath:UIBezierPath!
     
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
         //initialize()
     }
 
-    public init(coder aDecoder: NSCoder!) {
+    required public init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         //initialize()
     }

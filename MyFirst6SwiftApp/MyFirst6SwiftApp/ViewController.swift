@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     var actionSheet:UIBarButtonItem!
     var alertView:UIBarButtonItem!
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder);
     }
     

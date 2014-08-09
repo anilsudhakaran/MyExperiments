@@ -35,12 +35,12 @@ import QuartzCore
     
     var myImageLayer:CALayer!
     
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         // Initialization code
     }
 
-    init(coder aDecoder: NSCoder!) {
+    public required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         // Initialization code
 
@@ -83,7 +83,7 @@ import QuartzCore
         addSubview(myView)
         myView.center = center
         myView.backgroundColor = UIColor.clearColor()
-        myView.backColor = backgroundColor
+        myView.backColor = backgroundColor!
     }
     
     func updateMyLabelsText() {

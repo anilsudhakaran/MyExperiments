@@ -17,7 +17,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet private var headerView: UIView!
     @IBOutlet private var headerLabel: UILabel!
     
-    init(coder aDecoder: NSCoder!) {
+    required public init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         //Custom Initializiation
     }
