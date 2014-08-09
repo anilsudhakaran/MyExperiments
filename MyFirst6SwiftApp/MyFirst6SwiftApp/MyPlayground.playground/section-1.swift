@@ -93,7 +93,33 @@ func reverseString(normalString str:String) -> String {
     return str
 }
 
+func getLongestPalindrome(normalString str:String) -> String {
+    
+    var substr = ""
+    var str = str
+    var length = countElements(str)
+    var counter = length
+    while (counter > 0) {
+        var numberOfPasses = length-counter+1
+        for var index = 0; index < numberOfPasses; ++index {
+            var charRangeStart = advance(str.startIndex, index)
+            var charRangeEnd = advance(charRangeStart, counter)
+            substr = str.substringWithRange(Range(start: charRangeStart, end: charRangeEnd))
+            var reversedSubstr = reverseString(normalString: substr)
+            if (reversedSubstr == substr) {
+                counter = 1
+                index = numberOfPasses
+            }
+            else {
+                substr = ""
+            }
+        }
+        counter--
+    }
+    return substr
+}
+
 var originalString = "Malayalam"
 var reversedString = reverseString(normalString: originalString)
 var isPalindraome = (originalString.lowercaseString == reversedString.lowercaseString)
-
+var longestPalindrome = getLongestPalindrome(normalString: "imracecarn")

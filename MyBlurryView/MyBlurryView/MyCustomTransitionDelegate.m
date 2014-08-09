@@ -27,7 +27,7 @@
 
 -(UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     
-    MyPresentationController *myPresentationController = [[MyPresentationController alloc] initWithPresentingViewController:presenting presentedViewController:presented];
+    MyPresentationController *myPresentationController = [[MyPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     myPresentationController.delegate = self;
     return myPresentationController;
 }

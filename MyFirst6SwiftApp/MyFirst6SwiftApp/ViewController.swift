@@ -37,6 +37,9 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         actionSheet.tintColor = UIColor.magentaColor()
         
         navigationItem.rightBarButtonItems = [popoverButton, actionSheet, alertView]
+        
+        var longestPalindrome = getLongestPalindrome(normalString: "imracecarn")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -183,5 +186,56 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     func dismissPopover(sender: AnyObject!) {
         self.navigationController.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    //MARK: Custom Methods
+    func reverseString(normalString str:String) -> String {
+        var str = str
+        var begin = 0
+        var end = countElements(str)
+        while (end > begin) {
+            
+            var firstCharRangeStart = advance(str.startIndex, begin)
+            var firstCharRangeEnd = advance(str.startIndex, begin+1)
+            var firstChar = str.substringWithRange(Range(start: firstCharRangeStart, end: firstCharRangeEnd))
+            
+            var lastCharRangeStart = advance(str.endIndex, -(begin+1))
+            var lastCharRangeEnd = advance(str.endIndex, -begin)
+            var lastChar = str.substringWithRange(Range(start: lastCharRangeStart, end: lastCharRangeEnd))
+            
+            str = str.stringByReplacingCharactersInRange(Range(start: firstCharRangeStart, end: firstCharRangeEnd), withString: lastChar)
+            str = str.stringByReplacingCharactersInRange(Range(start: lastCharRangeStart, end: lastCharRangeEnd), withString: firstChar)
+            
+            end--
+            begin++
+        }
+        return str
+    }
+    
+    func getLongestPalindrome(normalString str:String) -> String {
+        
+        var substr = ""
+        var str = str
+        var length = countElements(str)
+        var counter = length
+        while (counter > 0) {
+            var numberOfPasses = length-counter+1
+            for var index = 0; index < numberOfPasses; ++index {
+                var charRangeStart = advance(str.startIndex, index)
+                var charRangeEnd = advance(charRangeStart, counter)
+                substr = str.substringWithRange(Range(start: charRangeStart, end: charRangeEnd))
+                var reversedSubstr = reverseString(normalString: substr)
+                if (reversedSubstr == substr) {
+                    counter = 1
+                    index = numberOfPasses
+                }
+                else {
+                    substr = ""
+                }
+            }
+            counter--
+        }
+        return substr
+    }
+
 }
 

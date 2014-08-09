@@ -15,8 +15,8 @@
 
 @implementation MyPresentationController
 
--(instancetype)initWithPresentingViewController:(UIViewController *)presentingViewController presentedViewController:(UIViewController *)presentedViewController {
-    self = [super initWithPresentingViewController:presentingViewController presentedViewController:presentedViewController];
+-(instancetype)initWithPresentedViewController:(UIViewController *)presentedViewController presentingViewController:(UIViewController *)presentingViewController {
+    self  = [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController];
     if (self) {
         [self prepareDimmingView];
     }
@@ -89,7 +89,7 @@
 
 -(void)prepareDimmingView {
     self.dimmingView = [[UIView alloc] init];
-    [self.dimmingView setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.25]];
+    [self.dimmingView setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5]];
     self.dimmingView.alpha = 0.0;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dimmingViewTapped:)];
