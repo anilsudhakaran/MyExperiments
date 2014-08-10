@@ -32,7 +32,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        tableView.registerNib(UINib(nibName: "MyCell", bundle: NSBundle(identifier: "MyCustomFramework")), forCellReuseIdentifier: "myCell")
+        tableView.registerNib(UINib(nibName: "MyCell", bundle: NSBundle(identifier: "com.anils.MyCustomFramework")), forCellReuseIdentifier: "myCell")
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light))

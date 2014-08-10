@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2692B72A1983521700613517"
+               BlueprintIdentifier = "2630B65819980CDA004548C2"
                BuildableName = "MyCustomFramework.framework"
                BlueprintName = "MyCustomFramework"
                ReferencedContainer = "container:MyFirst6SwiftApp.xcodeproj">
@@ -53,7 +53,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2692B72A1983521700613517"
+            BlueprintIdentifier = "2630B65819980CDA004548C2"
             BuildableName = "MyCustomFramework.framework"
             BlueprintName = "MyCustomFramework"
             ReferencedContainer = "container:MyFirst6SwiftApp.xcodeproj">
