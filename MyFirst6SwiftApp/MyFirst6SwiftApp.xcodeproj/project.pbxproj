@@ -24,6 +24,9 @@
 		2630B67E19980D2E004548C2 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E77EA1966491F00795486 /* MyVC.swift */; };
 		2649474A194CEEED00B92CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26494749194CEEED00B92CCD /* Images.xcassets */; };
 		2649474C194CF0B500B92CCD /* vase.png in Resources */ = {isa = PBXBuildFile; fileRef = 2649474B194CF0B500B92CCD /* vase.png */; };
+		2694F07319AC510D0096FD89 /* MyActivityItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694F07219AC510D0096FD89 /* MyActivityItemProvider.swift */; };
+		2694F07519ACC16F0096FD89 /* MyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694F07419ACC16F0096FD89 /* MyActivity.swift */; };
+		2694F07719AD88B70096FD89 /* MyActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694F07619AD88B70096FD89 /* MyActivityVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		2649474B194CF0B500B92CCD /* vase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vase.png; sourceTree = "<group>"; };
 		268E77EA1966491F00795486 /* MyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		2692B7351983521800613517 /* MyCustomFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2694F07219AC510D0096FD89 /* MyActivityItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityItemProvider.swift; sourceTree = "<group>"; };
+		2694F07419ACC16F0096FD89 /* MyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivity.swift; sourceTree = "<group>"; };
+		2694F07619AD88B70096FD89 /* MyActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityVC.swift; sourceTree = "<group>"; };
 		26E4B0AF194DE843004E67C0 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		26E4B0B1194EA764004E67C0 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
 		26F0656D194FE8DC00D54E76 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
@@ -172,6 +178,9 @@
 				26188E25194899D200D773CD /* MyCustomView.swift */,
 				26E4B0AF194DE843004E67C0 /* MyView.swift */,
 				26F0656D194FE8DC00D54E76 /* MyCell.swift */,
+				2694F07219AC510D0096FD89 /* MyActivityItemProvider.swift */,
+				2694F07419ACC16F0096FD89 /* MyActivity.swift */,
+				2694F07619AD88B70096FD89 /* MyActivityVC.swift */,
 				26188DE31948942F00D773CD /* Main.storyboard */,
 				26F0656E194FE8DC00D54E76 /* MyCell.xib */,
 				2621BE3E196902DC009AC237 /* MyCustomView.xib */,
@@ -448,7 +457,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2694F07719AD88B70096FD89 /* MyActivityVC.swift in Sources */,
 				26188DE21948942F00D773CD /* ViewController.swift in Sources */,
+				2694F07319AC510D0096FD89 /* MyActivityItemProvider.swift in Sources */,
+				2694F07519ACC16F0096FD89 /* MyActivity.swift in Sources */,
 				26188DE01948942F00D773CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +698,7 @@
 				);
 				INFOPLIST_FILE = MyCustomFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -708,6 +721,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MyCustomFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -821,6 +835,7 @@
 				2630B67319980CDB004548C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2630B67519980CDB004548C2 /* Build configuration list for PBXNativeTarget "MyCustomFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -829,6 +844,7 @@
 				2630B67719980CDB004548C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2692B7471983521800613517 /* Build configuration list for PBXNativeTarget "MyCustomFrameworkTests" */ = {
 			isa = XCConfigurationList;

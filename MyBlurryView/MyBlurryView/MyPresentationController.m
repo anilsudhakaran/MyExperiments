@@ -109,4 +109,8 @@
     }
 }
 
+//-(BOOL)shouldRemovePresentersView {
+//    return NO;
+//}
+
 @end

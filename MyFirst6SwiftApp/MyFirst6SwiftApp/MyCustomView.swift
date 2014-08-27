@@ -40,7 +40,7 @@ import QuartzCore
         // Initialization code
     }
 
-    public required init(coder aDecoder: NSCoder!) {
+    public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         // Initialization code
 
@@ -54,10 +54,10 @@ import QuartzCore
     override public func layoutSubviews() {
         super.layoutSubviews()
         
-        if !myView {
+        if !(myView != nil) {
             myView = MyView(frame: CGRectMake(0, 0, 240, 240))
         }
-        if !myLabel {
+        if !(myLabel != nil) {
             myLabel = UILabel(frame: CGRectMake(0, 0, 240, 240))
         }
 
@@ -87,13 +87,13 @@ import QuartzCore
     }
     
     func updateMyLabelsText() {
-        if myLabel {
+        if (myLabel != nil) {
             myLabel.text = myLabelString
         }
     }
     
     func updateMyLabelsFontSize() {
-        if myLabel {
+        if (myLabel != nil) {
             let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleHeadline)
             myLabel.font = UIFont(descriptor: fontDescriptor, size: fontSize)
         }

@@ -17,7 +17,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet private var headerView: UIView!
     @IBOutlet private var headerLabel: UILabel!
     
-    required public init(coder aDecoder: NSCoder!) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //Custom Initializiation
     }
@@ -60,7 +60,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if navigationController {
+        if (navigationController != nil) {
             navigationController.setToolbarHidden(true, animated: true)
             navigationController.hidesBarsOnTap = true
         }
@@ -94,6 +94,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         var testAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Accept", handler:
             {(testAction, indexPath) -> Void in
                 println("Action \(testAction.title) Index Path \(indexPath)")
+                tableView.setEditing(false, animated: true);
             }
         )
         testAction.backgroundColor = UIColor(red: 131.0/255.0, green: 147.0/255.0, blue: 202.0/255.0, alpha: 1.0)
@@ -102,6 +103,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         var testAction1 = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Reject", handler:
             {(testAction1, indexPath) -> Void in
                 println("Action \(testAction1.title) Index Path \(indexPath)")
+                tableView.setEditing(false, animated: true);
             }
         )
         testAction1.backgroundColor = UIColor(red: 246.0/255.0, green: 150.0/255.0, blue: 121.0/255.0, alpha: 1.0)
@@ -110,6 +112,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         var testAction2 = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Pass", handler:
             {(testAction2, indexPath) -> Void in
                 println("Action \(testAction2.title) Index Path \(indexPath)")
+                tableView.setEditing(false, animated: true);
             }
         )
         testAction2.backgroundColor = UIColor(red: 244.0/255.0, green: 154.0/255.0, blue: 193.0/255.0, alpha: 1.0)

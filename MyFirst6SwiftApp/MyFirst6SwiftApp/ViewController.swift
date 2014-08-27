@@ -21,8 +21,9 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     
     var actionSheet:UIBarButtonItem!
     var alertView:UIBarButtonItem!
+    var activityView:UIBarButtonItem!
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
     }
     
@@ -33,10 +34,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         
         actionSheet = UIBarButtonItem(title: "Action Sheet", style: .Bordered, target: self, action:"loadActionSheet:")
         alertView = UIBarButtonItem(title: "Alert View", style: .Bordered, target: self, action:"loadAlertView:")
-
+        activityView = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "loadActivitySheet:")
+        activityView.tintColor = UIColor.orangeColor()
         actionSheet.tintColor = UIColor.magentaColor()
         
-        navigationItem.rightBarButtonItems = [popoverButton, actionSheet, alertView]
+        navigationItem.rightBarButtonItems = [popoverButton, actionSheet, alertView, activityView]
         
         var longestPalindrome = getLongestPalindrome(normalString: "imracecarn")
 
@@ -84,6 +86,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         self.navigationController.presentViewController(popoverView, animated: true, completion:{})
     }
     
+    //MARK: Present Action Sheet
     func loadActionSheet(sender: AnyObject!) {
         println("Action Sheet source button is \(sender)")
         var actionSheet = UIAlertController(title: "Action Sheet", message: "You can now disable actions in action sheet", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -127,6 +130,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         self.navigationController.presentViewController(actionSheet, animated: true, completion: {})
     }
     
+    //MARK: Present Alert View
     func loadAlertView(sender: AnyObject!) {
         println("Alert View source button is \(sender)")
         var alert = UIAlertController(title: "Alert!!", message: "Alert Message", preferredStyle: UIAlertControllerStyle.Alert)
@@ -151,7 +155,19 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         self.navigationController.presentViewController(alert, animated: true, completion: {})
     }
     
-    //UIAdaptivePresentationControllerDelegate
+    //MARK: Present Activity Sheet
+    func loadActivitySheet(sender: UIBarButtonItem!) {
+        var myString = "Test 1234"
+        var myURL:NSURL = NSURL(string: "http://www.flickr.com/anils")
+
+        var myActivityProvider:MyActivityItemProvider = MyActivityItemProvider();
+        var myActivity:MyActivity = MyActivity();
+        
+        var activity:UIActivityViewController = UIActivityViewController(activityItems: [myActivityProvider,myString,myURL], applicationActivities: [myActivity]);
+        self.presentViewController(activity, animated: true, completion: nil)
+    }
+    
+    //MARK: UIAdaptivePresentationControllerDelegate
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
         //controller.presentedViewController.view.frame = CGRectMake(CGRectGetMinX(view.bounds), topLayoutGuideLength, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds))
         
