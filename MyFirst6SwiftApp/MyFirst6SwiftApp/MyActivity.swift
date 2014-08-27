@@ -10,7 +10,7 @@ import UIKit
 
 
 func activityCategory() -> UIActivityCategory {
-    return UIActivityCategory.Share
+    return UIActivityCategory.Action
 }
 
 class MyActivity:UIActivity {
