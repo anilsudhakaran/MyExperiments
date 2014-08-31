@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MyCusActExt.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>MyCustomFramework.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -14,9 +19,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MyShareExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2616288F19B24280004CDFF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>26188DD91948942F00D773CD</key>
 		<dict>
 			<key>primary</key>
@@ -43,6 +58,16 @@
 			<true/>
 		</dict>
 		<key>2630B66219980CDA004548C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>263E068C19AF767400F82869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2678BCF319B21CEE00FFF38B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
