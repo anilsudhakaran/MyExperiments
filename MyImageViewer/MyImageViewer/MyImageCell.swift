@@ -14,4 +14,12 @@ class MyImageCell: UICollectionViewCell {
     @IBOutlet weak var imageNameLabel: UILabel!
     var imagePath:NSString?
     var imagePathURL:NSURL?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectedBackgroundView = UIView(frame: bounds)
+        selectedBackgroundView.backgroundColor = UIColor.clearColor()
+        selectedBackgroundView.layer.borderColor = UIColor.orangeColor().CGColor
+        selectedBackgroundView.layer.borderWidth = 2.0;
+    }
 }

@@ -27,12 +27,17 @@
 		2630B67E19980D2E004548C2 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E77EA1966491F00795486 /* MyVC.swift */; };
 		263E069219AF767500F82869 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263E069119AF767500F82869 /* ShareViewController.swift */; };
 		263E069419AF767500F82869 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263E069319AF767500F82869 /* MainInterface.storyboard */; };
-		263E069719AF767500F82869 /* MyShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 263E068D19AF767400F82869 /* MyShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		263E069719AF767500F82869 /* MyShareExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 263E068D19AF767400F82869 /* MyShareExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2649474A194CEEED00B92CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26494749194CEEED00B92CCD /* Images.xcassets */; };
 		2649474C194CF0B500B92CCD /* vase.png in Resources */ = {isa = PBXBuildFile; fileRef = 2649474B194CF0B500B92CCD /* vase.png */; };
 		2694F07319AC510D0096FD89 /* MyActivityItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694F07219AC510D0096FD89 /* MyActivityItemProvider.swift */; };
 		2694F07519ACC16F0096FD89 /* MyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694F07419ACC16F0096FD89 /* MyActivity.swift */; };
 		2694F07719AD88B70096FD89 /* MyActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694F07619AD88B70096FD89 /* MyActivityVC.swift */; };
+		26B54AD119B42E10008A9D90 /* MyShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B54AD019B42E10008A9D90 /* MyShareVC.swift */; };
+		26B54AD319B43D29008A9D90 /* MyImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B54AD219B43D29008A9D90 /* MyImageCollectionCell.swift */; };
+		26B54AD519B43D3E008A9D90 /* MyRecipientListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B54AD419B43D3E008A9D90 /* MyRecipientListCell.swift */; };
+		26B54AD719B43D56008A9D90 /* MyContentTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B54AD619B43D56008A9D90 /* MyContentTextCell.swift */; };
+		26B54AD919B43F5E008A9D90 /* MyImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B54AD819B43F5E008A9D90 /* MyImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +117,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				263E069719AF767500F82869 /* MyShareExtension.appex in Embed App Extensions */,
+				263E069719AF767500F82869 /* MyShareExt.appex in Embed App Extensions */,
 				2616289A19B24280004CDFF4 /* MyCusActExt.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -142,7 +147,7 @@
 		2630B66319980CDA004548C2 /* MyCustomFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2630B66819980CDA004548C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2630B66919980CDA004548C2 /* MyCustomFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomFrameworkTests.swift; sourceTree = "<group>"; };
-		263E068D19AF767400F82869 /* MyShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		263E068D19AF767400F82869 /* MyShareExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyShareExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		263E069019AF767500F82869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263E069119AF767500F82869 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		263E069319AF767500F82869 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
@@ -153,6 +158,11 @@
 		2694F07219AC510D0096FD89 /* MyActivityItemProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityItemProvider.swift; sourceTree = "<group>"; };
 		2694F07419ACC16F0096FD89 /* MyActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivity.swift; sourceTree = "<group>"; };
 		2694F07619AD88B70096FD89 /* MyActivityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityVC.swift; sourceTree = "<group>"; };
+		26B54AD019B42E10008A9D90 /* MyShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShareVC.swift; sourceTree = "<group>"; };
+		26B54AD219B43D29008A9D90 /* MyImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageCollectionCell.swift; sourceTree = "<group>"; };
+		26B54AD419B43D3E008A9D90 /* MyRecipientListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRecipientListCell.swift; sourceTree = "<group>"; };
+		26B54AD619B43D56008A9D90 /* MyContentTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyContentTextCell.swift; sourceTree = "<group>"; };
+		26B54AD819B43F5E008A9D90 /* MyImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyImageCell.swift; sourceTree = "<group>"; };
 		26E4B0AF194DE843004E67C0 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		26E4B0B1194EA764004E67C0 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
 		26F0656D194FE8DC00D54E76 /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
@@ -252,7 +262,7 @@
 				2692B7351983521800613517 /* MyCustomFrameworkTests.xctest */,
 				2630B65919980CDA004548C2 /* MyCustomFramework.framework */,
 				2630B66319980CDA004548C2 /* MyCustomFrameworkTests.xctest */,
-				263E068D19AF767400F82869 /* MyShareExtension.appex */,
+				263E068D19AF767400F82869 /* MyShareExt.appex */,
 				2616289019B24280004CDFF4 /* MyCusActExt.appex */,
 			);
 			name = Products;
@@ -345,6 +355,11 @@
 			isa = PBXGroup;
 			children = (
 				263E069119AF767500F82869 /* ShareViewController.swift */,
+				26B54AD019B42E10008A9D90 /* MyShareVC.swift */,
+				26B54AD219B43D29008A9D90 /* MyImageCollectionCell.swift */,
+				26B54AD419B43D3E008A9D90 /* MyRecipientListCell.swift */,
+				26B54AD619B43D56008A9D90 /* MyContentTextCell.swift */,
+				26B54AD819B43F5E008A9D90 /* MyImageCell.swift */,
 				263E069319AF767500F82869 /* MainInterface.storyboard */,
 				263E068F19AF767500F82869 /* Supporting Files */,
 			);
@@ -469,9 +484,9 @@
 			productReference = 2630B66319980CDA004548C2 /* MyCustomFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		263E068C19AF767400F82869 /* MyShareExtension */ = {
+		263E068C19AF767400F82869 /* MyShareExt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 263E069C19AF767500F82869 /* Build configuration list for PBXNativeTarget "MyShareExtension" */;
+			buildConfigurationList = 263E069C19AF767500F82869 /* Build configuration list for PBXNativeTarget "MyShareExt" */;
 			buildPhases = (
 				263E068919AF767400F82869 /* Sources */,
 				263E068A19AF767400F82869 /* Frameworks */,
@@ -481,9 +496,9 @@
 			);
 			dependencies = (
 			);
-			name = MyShareExtension;
+			name = MyShareExt;
 			productName = MyShareExtension;
-			productReference = 263E068D19AF767400F82869 /* MyShareExtension.appex */;
+			productReference = 263E068D19AF767400F82869 /* MyShareExt.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		2692B7341983521800613517 /* MyCustomFrameworkTests */ = {
@@ -560,7 +575,7 @@
 				2692B7341983521800613517 /* MyCustomFrameworkTests */,
 				2630B65819980CDA004548C2 /* MyCustomFramework */,
 				2630B66219980CDA004548C2 /* MyCustomFrameworkTests */,
-				263E068C19AF767400F82869 /* MyShareExtension */,
+				263E068C19AF767400F82869 /* MyShareExt */,
 				2616288F19B24280004CDFF4 /* MyCusActExt */,
 			);
 		};
@@ -678,7 +693,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B54AD119B42E10008A9D90 /* MyShareVC.swift in Sources */,
+				26B54AD519B43D3E008A9D90 /* MyRecipientListCell.swift in Sources */,
 				263E069219AF767500F82869 /* ShareViewController.swift in Sources */,
+				26B54AD919B43F5E008A9D90 /* MyImageCell.swift in Sources */,
+				26B54AD319B43D29008A9D90 /* MyImageCollectionCell.swift in Sources */,
+				26B54AD719B43D56008A9D90 /* MyContentTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,12 +744,12 @@
 		};
 		263E069619AF767500F82869 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 263E068C19AF767400F82869 /* MyShareExtension */;
+			target = 263E068C19AF767400F82869 /* MyShareExt */;
 			targetProxy = 263E069519AF767500F82869 /* PBXContainerItemProxy */;
 		};
 		263E069919AF767500F82869 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 263E068C19AF767400F82869 /* MyShareExtension */;
+			target = 263E068C19AF767400F82869 /* MyShareExt */;
 			targetProxy = 263E069819AF767500F82869 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1077,6 +1097,7 @@
 				2616289F19B24281004CDFF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26188DD51948942E00D773CD /* Build configuration list for PBXProject "MyFirst6SwiftApp" */ = {
 			isa = XCConfigurationList;
@@ -1123,7 +1144,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		263E069C19AF767500F82869 /* Build configuration list for PBXNativeTarget "MyShareExtension" */ = {
+		263E069C19AF767500F82869 /* Build configuration list for PBXNativeTarget "MyShareExt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				263E069A19AF767500F82869 /* Debug */,

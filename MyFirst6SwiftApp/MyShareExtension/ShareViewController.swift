@@ -15,12 +15,14 @@ var maxAllowedCharacters:Int = 100
 class ShareViewController: SLComposeServiceViewController {
     
     var imageCount:Int = 0
+    var imageDataList = [NSData]();
+    var imageURLList = [NSURL]();
     
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
         var currentCharCount = countElements(contentText) as Int
         charactersRemaining = maxAllowedCharacters-currentCharCount
-        return (charactersRemaining >= 0 && imageCount <= 5)
+        return (charactersRemaining >= 0 && imageDataList.count >= 0 && imageDataList.count <= 5)
     }
 
     override func didSelectPost() {
@@ -36,14 +38,25 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     override func presentationAnimationDidFinish() {
+        textView.font = UIFont(name: "HelveticaNeue-Light", size: 13.0)
+        textView.textColor = UIColor.darkGrayColor()
         placeholder = "Enter Text here"
         charactersRemaining = maxAllowedCharacters
         var extensionItem:NSExtensionItem = extensionContext.inputItems.first as NSExtensionItem
         
         for itemProvider in extensionItem.attachments! {
-            if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString) {
+            if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeURL as NSString) {
                 imageCount++
+                itemProvider.loadItemForTypeIdentifier(kUTTypeImage as NSString, options: nil, completionHandler: { (imageURL, error) -> Void in
+                    println("\(imageURL)")
+                    if imageURL != nil {
+                        var imageData = NSData(contentsOfURL: imageURL as NSURL)
+                        self.imageDataList.append(imageData)
+                    }
+                })
             }
         }
+        
+        self.validateContent()
     }
 }

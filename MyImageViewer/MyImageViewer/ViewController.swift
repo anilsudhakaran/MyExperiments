@@ -18,7 +18,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         myCollectionView.allowsMultipleSelection = true
-        data = [["name":"DSC_0121.png"],["name":"DSC_0260.png"]]
+        data = [["name":"DSC_0121.png"],["name":"DSC_0260.png"],["name":"skittles.png"],["name":"santa barbara mission.png"],["name":"solvang windmill.png"],["name":"california poppy.png"]]
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +37,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
     }
 
     func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
-        var cellId = indexPath.row == 0 ? "myImageCell1" : "myImageCell2"
-        var cell:MyImageCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as MyImageCell
+        var cell:MyImageCell = collectionView.dequeueReusableCellWithReuseIdentifier("myImageCell", forIndexPath: indexPath) as MyImageCell
         
         if data.count > indexPath.row {
             
@@ -56,40 +55,50 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         }
         
         //Selected Background view
-        cell.selectedBackgroundView = UIView(frame: cell.bounds)
-        cell.selectedBackgroundView.backgroundColor = UIColor.clearColor()
-        cell.selectedBackgroundView.layer.borderColor = UIColor.orangeColor().CGColor
-
+        var selectedIndexPaths = collectionView.indexPathsForSelectedItems()
+        for selectedIndexPath in selectedIndexPaths {
+            if (selectedIndexPath.section == indexPath.section && selectedIndexPath.row == indexPath.row) {
+                cell.selected = true
+            }
+            else {
+                cell.selected = false
+            }
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
-        var cell:MyImageCell = collectionView.cellForItemAtIndexPath(indexPath) as MyImageCell
-        cell.selectedBackgroundView.layer.borderWidth = 2.0;
-    }
-    
-    func collectionView(collectionView: UICollectionView!, didDeselectItemAtIndexPath indexPath: NSIndexPath!) {
-        var cell:MyImageCell = collectionView.cellForItemAtIndexPath(indexPath) as MyImageCell
-        cell.selectedBackgroundView.layer.borderWidth = 0.0;
+        
     }
     
     //MARK: Show Activities
     @IBAction func showAvailableActivities(sender: UIBarButtonItem) {
         
-        var imageDataArray = [NSURL]()
+        var imageURLArray = [NSURL]()
         
+        //var cell:MyImageCell?
         for indexPath in myCollectionView.indexPathsForSelectedItems() {
             if indexPath is NSIndexPath {
-                var cell = myCollectionView.cellForItemAtIndexPath(indexPath as NSIndexPath) as MyImageCell
-                var imageURL = cell.imagePathURL //UIImagePNGRepresentation(cell.myImageView.image)
-                if  (imageURL != nil) {
-                    imageDataArray.append(imageURL!)
+                var fileName = data[indexPath.row]["name"]
+                
+                var imagePath = NSBundle.mainBundle().pathForResource(fileName?.stringByDeletingPathExtension, ofType: fileName?.pathExtension)
+                if (imagePath != nil) {
+                    imageURLArray.append(NSURL(fileURLWithPath: imagePath!))
                 }
             }
         }
         
-        var activity:UIActivityViewController = UIActivityViewController(activityItems: imageDataArray, applicationActivities: nil);
+//        var img = cell?.myImageView.image
+//        
+//        var myActivityItems = [MyActivityItem]()
+//
+//        var item = MyActivityItem()
+//        item.myItem = img
+//        myActivityItems.append(item)
+        
+        var activity:UIActivityViewController = UIActivityViewController(activityItems: imageURLArray, applicationActivities: nil);
         self.presentViewController(activity, animated: true, completion: nil)
+        
     }
 
 }
