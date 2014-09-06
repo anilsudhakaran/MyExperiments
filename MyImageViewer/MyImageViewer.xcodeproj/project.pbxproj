@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2607AA3019B543600038DC36 /* santa barbara mission.png in Resources */ = {isa = PBXBuildFile; fileRef = 2607AA2F19B543600038DC36 /* santa barbara mission.png */; };
 		2607AA3219B543670038DC36 /* solvang windmill.png in Resources */ = {isa = PBXBuildFile; fileRef = 2607AA3119B543670038DC36 /* solvang windmill.png */; };
-		2607AA3419B5436E0038DC36 /* california poppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 2607AA3319B5436E0038DC36 /* california poppy.png */; };
 		2607AA3619B544570038DC36 /* skittles.png in Resources */ = {isa = PBXBuildFile; fileRef = 2607AA3519B544570038DC36 /* skittles.png */; };
+		263A2E0919B580AC00D69F56 /* california poppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 263A2E0819B580AC00D69F56 /* california poppy.png */; };
 		263E558719B39091008FF7CF /* DSC_0121.png in Resources */ = {isa = PBXBuildFile; fileRef = 263E558619B39091008FF7CF /* DSC_0121.png */; };
 		263E558919B3909F008FF7CF /* DSC_0260.png in Resources */ = {isa = PBXBuildFile; fileRef = 263E558819B3909F008FF7CF /* DSC_0260.png */; };
 		26B54ACC19B40C2B008A9D90 /* MyActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B54ACB19B40C2B008A9D90 /* MyActivityItem.swift */; };
@@ -35,8 +35,8 @@
 /* Begin PBXFileReference section */
 		2607AA2F19B543600038DC36 /* santa barbara mission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "santa barbara mission.png"; sourceTree = "<group>"; };
 		2607AA3119B543670038DC36 /* solvang windmill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "solvang windmill.png"; sourceTree = "<group>"; };
-		2607AA3319B5436E0038DC36 /* california poppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "california poppy.png"; sourceTree = "<group>"; };
 		2607AA3519B544570038DC36 /* skittles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skittles.png; sourceTree = "<group>"; };
+		263A2E0819B580AC00D69F56 /* california poppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "california poppy.png"; sourceTree = "<group>"; };
 		263E558619B39091008FF7CF /* DSC_0121.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSC_0121.png; sourceTree = "<group>"; };
 		263E558819B3909F008FF7CF /* DSC_0260.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSC_0260.png; sourceTree = "<group>"; };
 		26B54ACB19B40C2B008A9D90 /* MyActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyActivityItem.swift; sourceTree = "<group>"; };
@@ -73,12 +73,12 @@
 		263E558A19B390B2008FF7CF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				263A2E0819B580AC00D69F56 /* california poppy.png */,
 				263E558619B39091008FF7CF /* DSC_0121.png */,
 				263E558819B3909F008FF7CF /* DSC_0260.png */,
 				2607AA3519B544570038DC36 /* skittles.png */,
 				2607AA2F19B543600038DC36 /* santa barbara mission.png */,
 				2607AA3119B543670038DC36 /* solvang windmill.png */,
-				2607AA3319B5436E0038DC36 /* california poppy.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 				26DD35E619B113E300D8BB17 /* Images.xcassets in Resources */,
 				2607AA3019B543600038DC36 /* santa barbara mission.png in Resources */,
 				263E558719B39091008FF7CF /* DSC_0121.png in Resources */,
-				2607AA3419B5436E0038DC36 /* california poppy.png in Resources */,
+				263A2E0919B580AC00D69F56 /* california poppy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

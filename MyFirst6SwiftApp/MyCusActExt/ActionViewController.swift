@@ -21,9 +21,9 @@ class ActionViewController: UIViewController {
         // For example, look for an image and place it into an image view.
         // Replace this with something appropriate for the type[s] your extension supports.
         var imageFound = false
-        for item: AnyObject in self.extensionContext.inputItems {
+        for item:AnyObject in self.extensionContext!.inputItems {
             let inputItem = item as NSExtensionItem
-            for provider: AnyObject in inputItem.attachments! {
+            for provider:AnyObject in inputItem.attachments! {
                 let itemProvider = provider as NSItemProvider
                 if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeImage as NSString) {
                     // This is an image. We'll load it, then place it in our image view.
@@ -40,7 +40,7 @@ class ActionViewController: UIViewController {
                                     }
                                     else if image is UIImage {
                                         println("UIImage: \(itemProvider)")
-                                        imageView.image = image as UIImage
+                                        imageView.image = image as? UIImage
                                     }
                                     else if image is NSURL {
                                         imageView.image = UIImage(data: NSData(contentsOfURL: image as NSURL))
@@ -75,7 +75,7 @@ class ActionViewController: UIViewController {
     @IBAction func done() {
         // Return any edited content to the host app.
         // This template doesn't do anything, so we just echo the passed in items.
-        self.extensionContext.completeRequestReturningItems(self.extensionContext.inputItems, completionHandler: nil)
+        self.extensionContext?.completeRequestReturningItems(self.extensionContext?.inputItems, completionHandler: nil)
     }
 
 }

@@ -56,21 +56,21 @@ public class MyTableVC: UITableViewController, UITableViewDataSource, UITableVie
     }
     // #pragma mark - Table view data source
 
-    override public func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
+    override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
 
-    override public func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return data!.count
     }
 
-    override public func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        var cell : MyCell = tableView!.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath!) as MyCell
+    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell : MyCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as MyCell
         
-        if data!.count > indexPath!.row {
-            var row = indexPath!.row
+        if data!.count > indexPath.row {
+            var row = indexPath.row
             cell.myTextLabel.text = data![row] as NSString
         }
         
@@ -78,7 +78,7 @@ public class MyTableVC: UITableViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    override public func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
+    override public func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject] {
         var testAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Accept", handler:
             {(testAction, indexPath) -> Void in
                 println("Action \(testAction.title) Index Path \(indexPath)")
@@ -106,15 +106,15 @@ public class MyTableVC: UITableViewController, UITableViewDataSource, UITableVie
         return [testAction1, testAction, testAction2]
     }
     
-    override public func tableView(tableView: UITableView!, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override public func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
     
-    override public func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle {
+    override public func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
     }
     
-    override public func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         println("Editing Style \(editingStyle)")
     }
 

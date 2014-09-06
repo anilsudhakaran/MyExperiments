@@ -54,7 +54,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         topLayoutGuideLength = topLayoutGuide.length
     }
     
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection!) {
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection) {
         super.traitCollectionDidChange(previousTraitCollection)
         myCustomView.setNeedsDisplay()
     }
@@ -78,12 +78,12 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         popoverView!.setEditing(false, animated: true)
         
         popoverView!.modalPresentationStyle = UIModalPresentationStyle.Popover
-        let popover:UIPopoverPresentationController = popoverView!.popoverPresentationController
+        let popover:UIPopoverPresentationController = popoverView!.popoverPresentationController!
         popover.delegate = self
         popover.permittedArrowDirections = .Any
         popover.barButtonItem = popoverButton
         popoverView!.preferredContentSize = CGSizeMake(200, 300)
-        self.navigationController.presentViewController(popoverView, animated: true, completion:{})
+        self.navigationController?.presentViewController(popoverView!, animated: true, completion:{})
     }
     
     //MARK: Present Action Sheet
@@ -112,7 +112,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
 
         if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClass.Regular) {
             actionSheet.modalPresentationStyle = .Popover
-            let popover:UIPopoverPresentationController = actionSheet.popoverPresentationController
+            let popover:UIPopoverPresentationController = actionSheet.popoverPresentationController!
             popover.delegate = self
             popover.permittedArrowDirections = .Any
             popover.barButtonItem = self.actionSheet
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
                 }
             }
         }
-        self.navigationController.presentViewController(actionSheet, animated: true, completion: {})
+        self.navigationController?.presentViewController(actionSheet, animated: true, completion: {})
     }
     
     //MARK: Present Alert View
@@ -152,7 +152,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         alert.addAction(cancelAction)
         alert.addAction(destructiveAction)
         
-        self.navigationController.presentViewController(alert, animated: true, completion: {})
+        self.navigationController?.presentViewController(alert, animated: true, completion: {})
     }
     
     //MARK: Present Activity Sheet
@@ -173,7 +173,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         
         //println("Presented View \(controller.presentedViewController.view)")
 
-        return UIModalPresentationStyle.OverFullScreen
+        return UIModalPresentationStyle.None
     }
     
     func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
@@ -193,14 +193,14 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         }
         
         popoverView!.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "dismissPopover:");
-        popoverView!.navigationItem.rightBarButtonItem.tintColor = UIColor(red: 242.0/255.0, green: 108.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+        popoverView!.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 242.0/255.0, green: 108.0/255.0, blue: 79.0/255.0, alpha: 1.0)
         //navController.hidesBarsOnTap = Bool.true
         //navController.condensesBarsOnSwipe = Bool.true
         return navController
     }
     
     func dismissPopover(sender: AnyObject!) {
-        self.navigationController.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: Custom Methods

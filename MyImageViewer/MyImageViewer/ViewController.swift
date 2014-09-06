@@ -28,50 +28,93 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
 
     //MARK:Collection View Delegate/DataSource methods
 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1;
     }
     
-    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count;
     }
 
-    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell:MyImageCell = collectionView.dequeueReusableCellWithReuseIdentifier("myImageCell", forIndexPath: indexPath) as MyImageCell
         
-        if data.count > indexPath.row {
-            
-            var fileName = data[indexPath.row]["name"]
-            
-            cell.imageNameLabel.text = fileName?.lastPathComponent.stringByDeletingPathExtension
-            
-            cell.imagePath = NSBundle.mainBundle().pathForResource(cell.imageNameLabel.text, ofType: fileName?.pathExtension)
-            
-            if cell.imagePath != nil {
-                cell.imagePathURL = NSURL(fileURLWithPath: cell.imagePath!)
-            }
-            
-            cell.myImageView.image = UIImage(named: cell.imageNameLabel.text)
+        if (!(collectionView.dragging && collectionView.decelerating)) {
+            showImages(forIndexPath: indexPath, forCell: cell)
         }
         
         //Selected Background view
-        var selectedIndexPaths = collectionView.indexPathsForSelectedItems()
-        for selectedIndexPath in selectedIndexPaths {
-            if (selectedIndexPath.section == indexPath.section && selectedIndexPath.row == indexPath.row) {
-                cell.selected = true
-            }
-            else {
-                cell.selected = false
-            }
-        }
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
     }
     
-    //MARK: Show Activities
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        draggingDecelerationEnded()
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        draggingDecelerationEnded()
+    }
+    
+    //MARK: - Utilities
+    func getBundlePath(usingFileDict fileDict:Dictionary<String,String>) -> String? {
+        var fileName = fileDict["name"]
+        return NSBundle.mainBundle().pathForResource(fileName?.lastPathComponent.stringByDeletingPathExtension, ofType: fileName?.pathExtension)!
+    }
+    
+    func draggingDecelerationEnded() -> Void {
+        var indexPaths = myCollectionView.indexPathsForVisibleItems()
+        for indexPath in indexPaths {
+            var cell = myCollectionView.cellForItemAtIndexPath(indexPath as NSIndexPath) as MyImageCell
+            showImages(forIndexPath: indexPath as NSIndexPath, forCell: cell)
+        }
+    }
+    
+    func showImages(forIndexPath indexPath:NSIndexPath, forCell cell:MyImageCell) -> Void {
+        
+        var selectedIndexPaths = self.myCollectionView.indexPathsForSelectedItems()
+
+        cell.selected = false
+
+        if data.count > indexPath.row {
+            
+
+            cell.myImageView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+
+            var myQueue = dispatch_queue_create("My Queue", nil)
+            
+            dispatch_async(myQueue, { () -> Void in
+                
+                cell.imagePath = self.getBundlePath(usingFileDict: self.data[indexPath.row])
+                
+                if (cell.imagePath != nil) {
+                    cell.imagePathURL = NSURL(fileURLWithPath: cell.imagePath!)
+                    var imgName = cell.imagePath?.lastPathComponent.stringByDeletingPathExtension
+                    if (imgName != nil) {
+                        var img = UIImage(named: imgName!)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            cell.imageNameLabel.text = imgName
+                            cell.myImageView.image = img
+                            cell.myImageView.backgroundColor = UIColor.clearColor()
+                            
+                            for selectedIndexPath in selectedIndexPaths {
+                                if (selectedIndexPath.section == indexPath.section && selectedIndexPath.row == indexPath.row) {
+                                    cell.selected = true
+                                }
+                            }
+
+                        })
+                    }
+                }
+                
+            })
+        }
+    }
+    
+    //MARK: - Show Activities
     @IBAction func showAvailableActivities(sender: UIBarButtonItem) {
         
         var imageURLArray = [NSURL]()
@@ -79,9 +122,7 @@ class ViewController: UIViewController,UICollectionViewDelegateFlowLayout,UIColl
         //var cell:MyImageCell?
         for indexPath in myCollectionView.indexPathsForSelectedItems() {
             if indexPath is NSIndexPath {
-                var fileName = data[indexPath.row]["name"]
-                
-                var imagePath = NSBundle.mainBundle().pathForResource(fileName?.stringByDeletingPathExtension, ofType: fileName?.pathExtension)
+                var imagePath = getBundlePath(usingFileDict: data[indexPath.row])
                 if (imagePath != nil) {
                     imageURLArray.append(NSURL(fileURLWithPath: imagePath!))
                 }

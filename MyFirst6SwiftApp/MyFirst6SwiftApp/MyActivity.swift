@@ -18,15 +18,15 @@ class MyActivity:UIActivity {
     var myString:String?
     var myURL:NSURL?
     
-    override func activityType() -> String! {
+    override func activityType() -> String? {
         return "com.anils.myFirstSwiftApp"
     }
     
-    override func activityTitle() -> String! {
+    override func activityTitle() -> String? {
         return NSLocalizedString("MyApp", tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
     }
     
-    override func prepareWithActivityItems(activityItems: [AnyObject]!) {
+    override func prepareWithActivityItems(activityItems: [AnyObject]) {
         for obj in activityItems {
             if obj is String {
                 myString = obj as? String
@@ -44,11 +44,11 @@ class MyActivity:UIActivity {
         }
     }
     
-    override func canPerformWithActivityItems(activityItems: [AnyObject]!) -> Bool {
+    override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
         return true
     }
     
-    override func activityViewController() -> UIViewController! {
+    override func activityViewController() -> UIViewController? {
         var myActivityVC:MyActivityVC = MyActivityVC()
         myActivityVC.view.backgroundColor = UIColor.orangeColor()
         myActivityVC.myString = myString

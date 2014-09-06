@@ -12,7 +12,7 @@ class MyImageCell: UICollectionViewCell {
 
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var imageNameLabel: UILabel!
-    var imagePath:NSString?
+    var imagePath:String?
     var imagePathURL:NSURL?
     
     override func awakeFromNib() {
@@ -21,5 +21,13 @@ class MyImageCell: UICollectionViewCell {
         selectedBackgroundView.backgroundColor = UIColor.clearColor()
         selectedBackgroundView.layer.borderColor = UIColor.orangeColor().CGColor
         selectedBackgroundView.layer.borderWidth = 2.0;
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        myImageView.image = nil;
+        imageNameLabel.text = nil;
+        imagePath = nil;
+        imagePathURL = nil;
     }
 }

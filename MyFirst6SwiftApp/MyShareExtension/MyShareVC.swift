@@ -38,7 +38,7 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         dispatch_async(myQueue, { () -> Void in
 
-            for item: AnyObject in self.extensionContext.inputItems {
+            for item: AnyObject in self.extensionContext!.inputItems {
                 let inputItem = item as NSExtensionItem
                 for provider: AnyObject in inputItem.attachments! {
                     let itemProvider = provider as NSItemProvider
@@ -89,8 +89,8 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
-        if coordinator != nil {
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        //if coordinator {
             coordinator.animateAlongsideTransition({ (context) -> Void in
                 var viewFrame = self.view.frame
                 viewFrame = CGRectInset(viewFrame, 30, 30)
@@ -98,7 +98,7 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }, completion: { (context) -> Void in
                 
             })
-        }
+        //}
     }
     
     
@@ -111,25 +111,25 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //MARK: - Bar Button Action Methods
     func cancel(sender:UIBarButtonItem) -> Void {
         var cancelError: NSError = NSError()
-        extensionContext.cancelRequestWithError(cancelError)
+        extensionContext!.cancelRequestWithError(cancelError)
     }
 
     @IBAction func save(sender: UIBarButtonItem) {
-        extensionContext.completeRequestReturningItems([], completionHandler: nil)
+        extensionContext!.completeRequestReturningItems([], completionHandler: nil)
     }
     
     //MARK: - TableView Delegate & Resource Methods
-    func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell:UITableViewCell?
+        var cell:UITableViewCell!
         
         switch (indexPath.row) {
         case 0:
@@ -154,7 +154,7 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch (indexPath.row) {
         case 0:
             return 99

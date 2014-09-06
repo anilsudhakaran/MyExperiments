@@ -10,7 +10,7 @@ import UIKit
 
 class MyActivityItemProvider: UIActivityItemProvider, UIActivityItemSource {
    
-    override func activityViewController(activityViewController: UIActivityViewController!, itemForActivityType activityType: String!) -> AnyObject! {
+    override func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
         if (activityType == UIActivityTypeMail) {
             return "Hello Mail App"
         }
@@ -20,14 +20,14 @@ class MyActivityItemProvider: UIActivityItemProvider, UIActivityItemSource {
         return nil
     }
     
-    override func activityViewController(activityViewController: UIActivityViewController!, subjectForActivityType activityType: String!) -> String! {
+    override func activityViewController(activityViewController: UIActivityViewController, subjectForActivityType activityType: String?) -> String {
         if (activityType == UIActivityTypeMail) {
             return "Mail!!"
         }
         else if (activityType == UIActivityTypeMessage) {
             return "Message!!"
         }
-        return nil
+        return "Activity not supported"
     }
     
 }

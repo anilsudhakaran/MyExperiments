@@ -17,16 +17,16 @@ class MyActivityItem: NSObject,UIActivityItemSource {
         super.init()
     }
         
-    func activityViewController(activityViewController: UIActivityViewController!, itemForActivityType activityType: String!) -> AnyObject! {
+    func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
         println("ActivityType: \(activityType)")
-        return myItem
+        return myItem!
     }
     
-    func activityViewControllerPlaceholderItem(activityViewController: UIActivityViewController!) -> AnyObject! {
-        return nil
+    func activityViewControllerPlaceholderItem(activityViewController: UIActivityViewController) -> AnyObject {
+        return UIImage()
     }
     
-    func activityViewController(activityViewController: UIActivityViewController!, dataTypeIdentifierForActivityType activityType: String!) -> String! {
+    func activityViewController(activityViewController: UIActivityViewController, dataTypeIdentifierForActivityType activityType: String) -> String {
         return kUTTypeImage as NSString
     }
 }

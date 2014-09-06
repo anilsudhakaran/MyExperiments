@@ -61,8 +61,8 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if (navigationController != nil) {
-            navigationController.setToolbarHidden(true, animated: true)
-            navigationController.hidesBarsOnTap = true
+            navigationController?.setToolbarHidden(true, animated: true)
+            navigationController?.hidesBarsOnTap = true
         }
     }
     
@@ -73,16 +73,16 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return 1
     }
     
-    public func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return data!.count
     }
     
-    public func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
-        var cell : MyCell = tableView!.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath!) as MyCell
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell : MyCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as MyCell
         
-        if data!.count > indexPath!.row {
-            var row = indexPath!.row
+        if data!.count > indexPath.row {
+            var row = indexPath.row
             cell.myTextLabel.text = data![row] as NSString
         }
         
@@ -90,7 +90,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-    public func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath!) -> [AnyObject]! {
+    public func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject] {
         var testAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Accept", handler:
             {(testAction, indexPath) -> Void in
                 println("Action \(testAction.title) Index Path \(indexPath)")
@@ -121,19 +121,19 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return [testAction1, testAction, testAction2]
     }
     
-    public func tableView(tableView: UITableView!, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    public func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
     
-    public func tableView(tableView: UITableView!, editingStyleForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCellEditingStyle {
+    public func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
     }
     
-    public func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         println("Editing Style \(editingStyle)")
     }
 
-    public func tableView(tableView: UITableView!, viewForHeaderInSection section: Int) -> UIView! {
+    public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView! {
         var sectionHeaderView:UIView = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(view.bounds), 25))
         sectionHeaderView.backgroundColor = UIColor.brownColor()
         
@@ -152,11 +152,11 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return sectionHeaderView
     }
     
-    public func tableView(tableView: UITableView!, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
 
-    public func tableView(tableView: UITableView!, viewForFooterInSection section: Int) -> UIView! {
+    public func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView {
         var sectionFooterView:UIView = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(view.bounds), 25))
         sectionFooterView.backgroundColor = UIColor.orangeColor()
         
@@ -175,7 +175,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return sectionFooterView
     }
     
-    public func tableView(tableView: UITableView!, heightForFooterInSection section: Int) -> CGFloat {
+    public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 25
     }
 
