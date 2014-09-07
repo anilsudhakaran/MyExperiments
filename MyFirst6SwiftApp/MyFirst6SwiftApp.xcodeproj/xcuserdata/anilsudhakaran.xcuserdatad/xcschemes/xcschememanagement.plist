@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>MyCustTodayExt.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>MyCustomFramework.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -63,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>263E068C19AF767400F82869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>26516A7319BC25E9001741A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
