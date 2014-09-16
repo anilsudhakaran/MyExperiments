@@ -10,12 +10,28 @@ import UIKit
 
 class MyActivityItemProvider: UIActivityItemProvider, UIActivityItemSource {
    
+    override func activityViewControllerPlaceholderItem(activityViewController: UIActivityViewController) -> AnyObject {
+        return NSString()
+    }
+    
     override func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
         if (activityType == UIActivityTypeMail) {
             return "Hello Mail App"
         }
         else if (activityType == UIActivityTypeMessage) {
             return "Hello Message App"
+        }
+        else if (activityType == UIActivityTypePostToTwitter) {
+            return "Hello Twitter"
+        }
+        else if (activityType == UIActivityTypePostToFacebook) {
+            return "Hello Facebook"
+        }
+        else if (activityType == UIActivityTypePostToFlickr) {
+            return "Hello Flickr"
+        }
+        else if (activityType == UIActivityTypeAirDrop) {
+            return "Hello Airdrop"
         }
         return nil
     }
@@ -27,7 +43,19 @@ class MyActivityItemProvider: UIActivityItemProvider, UIActivityItemSource {
         else if (activityType == UIActivityTypeMessage) {
             return "Message!!"
         }
-        return "Activity not supported"
+        else if (activityType == UIActivityTypePostToTwitter) {
+            return "Twitter!!"
+        }
+        else if (activityType == UIActivityTypePostToFacebook) {
+            return "Facebook!!"
+        }
+        else if (activityType == UIActivityTypePostToFlickr) {
+            return "Flickr!!"
+        }
+        else if (activityType == UIActivityTypeAirDrop) {
+            return "Airdrop!!"
+        }
+        return "No subject"
     }
     
 }
