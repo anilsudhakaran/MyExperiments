@@ -33,6 +33,9 @@ class MyActivityItemProvider: UIActivityItemProvider, UIActivityItemSource {
         else if (activityType == UIActivityTypeAirDrop) {
             return "Hello Airdrop"
         }
+        else if (activityType == "com.anils.myFirstSwiftApp") {
+            return NSURL(string: "http://www.apple.com")
+        }
         return nil
     }
     

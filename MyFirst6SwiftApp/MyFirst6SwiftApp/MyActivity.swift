@@ -13,13 +13,16 @@ func activityCategory() -> UIActivityCategory {
     return UIActivityCategory.Action
 }
 
+public let myActivityType:String = "com.anils.myFirstSwiftApp"
+
 class MyActivity:UIActivity {
     
     var myString:String?
     var myURL:NSURL?
     
+    
     override func activityType() -> String? {
-        return "com.anils.myFirstSwiftApp"
+        return myActivityType
     }
     
     override func activityTitle() -> String? {

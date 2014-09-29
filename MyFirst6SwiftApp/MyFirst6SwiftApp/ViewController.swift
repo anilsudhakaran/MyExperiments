@@ -162,6 +162,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
 
         var myActivityProvider:MyActivityItemProvider = MyActivityItemProvider();
         var myActivity:MyActivity = MyActivity();
+        myActivity.myURL = myURL
+        myActivity.myString = myString
         
         var activity:UIActivityViewController = UIActivityViewController(activityItems: [myActivityProvider], applicationActivities: [myActivity]);
         self.presentViewController(activity, animated: true, completion: nil)
