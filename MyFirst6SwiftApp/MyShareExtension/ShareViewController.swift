@@ -22,7 +22,7 @@ class ShareViewController: SLComposeServiceViewController {
         // Do validation of contentText and/or NSExtensionContext attachments here
         var currentCharCount = countElements(contentText) as Int
         charactersRemaining = maxAllowedCharacters-currentCharCount
-        return (charactersRemaining >= 0 && imageDataList.count >= 0 && imageDataList.count <= 5)
+        return (charactersRemaining.intValue >= 0 && imageDataList.count >= 0 && imageDataList.count <= 5)
     }
 
     override func didSelectPost() {
@@ -51,7 +51,9 @@ class ShareViewController: SLComposeServiceViewController {
                     println("\(imageURL)")
                     if imageURL != nil {
                         var imageData = NSData(contentsOfURL: imageURL as NSURL)
-                        self.imageDataList.append(imageData)
+                        if imageData != nil {
+                            self.imageDataList.append(imageData!)
+                        }
                     }
                 })
             }

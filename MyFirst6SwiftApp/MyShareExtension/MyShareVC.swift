@@ -51,7 +51,7 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                                     //if let imageView = weakImageView {
                                 if imageInfo is NSData {
                                     println("NSData: \(imageInfo)")
-                                    self.imageList.append(UIImage(data: imageInfo as NSData))
+                                    self.imageList.append(UIImage(data: imageInfo as NSData)!)
                                 }
                                 else if imageInfo is UIImage {
                                     println("UIImage: \(imageInfo)")
@@ -59,7 +59,7 @@ class MyShareVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                                 }
                                 else if imageInfo is NSURL {
                                     println("NSURL: \(imageInfo)")
-                                    self.imageList.append(UIImage(data: NSData(contentsOfURL: imageInfo as NSURL)))
+                                    self.imageList.append(UIImage(data: NSData(contentsOfURL: imageInfo as NSURL!)!)!)
                                     println("\(self.imageList)")
                                 }
                                 else if imageInfo is NSString {

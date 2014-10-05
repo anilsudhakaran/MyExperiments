@@ -43,7 +43,7 @@ class ActionViewController: UIViewController {
                                         imageView.image = image as? UIImage
                                     }
                                     else if image is NSURL {
-                                        imageView.image = UIImage(data: NSData(contentsOfURL: image as NSURL))
+                                        imageView.image = UIImage(data: NSData(contentsOfURL: image as NSURL)!)
                                         println("NSURL: \(itemProvider)")
                                     }
                                     else if image is NSString {

@@ -88,6 +88,10 @@
     }];
 }
 
+-(void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    NSLog(@"New: %@", self.traitCollection);
+    NSLog(@"Old: %@", previousTraitCollection);
+}
 /*
 #pragma mark - Navigation
 

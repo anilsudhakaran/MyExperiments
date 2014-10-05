@@ -23,6 +23,7 @@
 		268B4357194513CF00F623F5 /* MyCustomFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 268B4356194513CF00F623F5 /* MyCustomFrameworkTests.m */; };
 		268B435A194513CF00F623F5 /* MyCustomFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268B4345194513CF00F623F5 /* MyCustomFramework.framework */; };
 		268B435B194513CF00F623F5 /* MyCustomFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 268B4345194513CF00F623F5 /* MyCustomFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		26DBD72719E0C9C100F738F7 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26DBD72619E0C9C100F738F7 /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		268B434F194513CF00F623F5 /* MyCustomFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		268B4355194513CF00F623F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		268B4356194513CF00F623F5 /* MyCustomFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCustomFrameworkTests.m; sourceTree = "<group>"; };
+		26DBD72619E0C9C100F738F7 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				268B433A1942F9D800F623F5 /* MyCustomTransition.h */,
 				268B433B1942F9D800F623F5 /* MyCustomTransition.m */,
 				2642E5C71963C85600DC9D15 /* MyCustomProtocol.h */,
+				26DBD72619E0C9C100F738F7 /* Launch Screen.xib */,
 				268B43191942EEA900F623F5 /* Images.xcassets */,
 				268B43101942EEA900F623F5 /* MyBlurryView.xcdatamodeld */,
 				268B43091942EEA900F623F5 /* Supporting Files */,
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				268B431A1942EEA900F623F5 /* Images.xcassets in Resources */,
+				26DBD72719E0C9C100F738F7 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

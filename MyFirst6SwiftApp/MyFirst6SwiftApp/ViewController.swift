@@ -54,7 +54,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         topLayoutGuideLength = topLayoutGuide.length
     }
     
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection) {
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         myCustomView.setNeedsDisplay()
     }
@@ -158,7 +158,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     //MARK: Present Activity Sheet
     func loadActivitySheet(sender: UIBarButtonItem!) {
         var myString = "Test 1234"
-        var myURL:NSURL = NSURL(string: "http://www.flickr.com/anils")
+        var myURL:NSURL = NSURL(string: "http://www.flickr.com/anils")!
 
         var myActivityProvider:MyActivityItemProvider = MyActivityItemProvider();
         var myActivity:MyActivity = MyActivity();
@@ -175,7 +175,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         
         //println("Presented View \(controller.presentedViewController.view)")
 
-        return UIModalPresentationStyle.None
+        return UIModalPresentationStyle.OverFullScreen
     }
     
     func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
@@ -184,7 +184,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
         
         var navController = UINavigationController(rootViewController: controller.presentedViewController)
         //navController.setToolbarHidden(Bool.false, animated: Bool.true)
-        navController.navigationBar.translucent = true
+        navController!.navigationBar.translucent = true
         
         let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
         visualEffectView.frame = controller.presentedViewController.view.frame;

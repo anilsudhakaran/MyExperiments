@@ -12,7 +12,7 @@ public class MyTableVC: UITableViewController, UITableViewDataSource, UITableVie
 
     var data:NSArray?
     
-    override init(style: UITableViewStyle) {
+    override init?(style: UITableViewStyle) {
         super.init(style: style)
         // Custom initialization
     }
@@ -40,7 +40,7 @@ public class MyTableVC: UITableViewController, UITableViewDataSource, UITableVie
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        tableView.registerNib(UINib(nibName: "MyCell", bundle:  NSBundle(identifier: "com.anils.MyCustomFramework")), forCellReuseIdentifier: "myCell")
+        tableView.registerNib(UINib(nibName: "MyCell", bundle:  NSBundle(identifier: "com.anils.MyCustomFramework"))!, forCellReuseIdentifier: "myCell")
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = UITableViewAutomaticDimension
     }

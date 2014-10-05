@@ -89,7 +89,7 @@
 
 -(void)prepareDimmingView {
     self.dimmingView = [[UIView alloc] init];
-    [self.dimmingView setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5]];
+    [self.dimmingView setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.3]];
     self.dimmingView.alpha = 0.0;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dimmingViewTapped:)];
