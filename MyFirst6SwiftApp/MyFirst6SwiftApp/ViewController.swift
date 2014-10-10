@@ -56,7 +56,14 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+//        println("Previous Trait Collection: \(previousTraitCollection)")
+//        println("Current Trait Collection: \(self.traitCollection)")
         myCustomView.setNeedsDisplay()
+        if  (popoverView != nil) {
+            popoverView!.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+            popoverView!.tableView.rowHeight = UITableViewAutomaticDimension
+            popoverView!.tableView.reloadData()
+        }
     }
     
     //Bar Button Items actions
@@ -181,24 +188,18 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate,
     func presentationController(controller: UIPresentationController!, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController! {
         
         println("Presented Controller: \(controller.presentedViewController)")
+        println("Style \(style)");
         
         var navController = UINavigationController(rootViewController: controller.presentedViewController)
         //navController.setToolbarHidden(Bool.false, animated: Bool.true)
         navController!.navigationBar.translucent = true
-        
-        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-        visualEffectView.frame = controller.presentedViewController.view.frame;
-
-        controller.presentedViewController.view.addSubview(visualEffectView)
-        if controller.presentedViewController is MyVC {
-            visualEffectView.contentView.addSubview((controller.presentedViewController as MyVC).tableView)
-        }
+        //navController!.automaticallyAdjustsScrollViewInsets = true;
         
         popoverView!.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "dismissPopover:");
         popoverView!.navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 242.0/255.0, green: 108.0/255.0, blue: 79.0/255.0, alpha: 1.0)
         //navController.hidesBarsOnTap = Bool.true
         //navController.condensesBarsOnSwipe = Bool.true
-        return navController
+        return navController!
     }
     
     func dismissPopover(sender: AnyObject!) {

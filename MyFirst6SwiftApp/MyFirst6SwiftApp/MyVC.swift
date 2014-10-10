@@ -24,7 +24,6 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -36,11 +35,6 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         tableView.estimatedRowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorEffect = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-        
-        var vibrEffectView = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: UIBlurEffectStyle.Light)))
-        vibrEffectView.frame = headerView.bounds
-        headerView.addSubview(vibrEffectView);
-        vibrEffectView.contentView.addSubview(headerLabel)
         
         headerLabel.font = UIFont(descriptor: UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleHeadline), size: 40.0)
     }
@@ -86,6 +80,7 @@ public class MyVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             cell.myTextLabel.text = data![row] as NSString
         }
         
+        cell.layoutMargins = UIEdgeInsetsZero
         // Configure the cell...
         return cell
     }
